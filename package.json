@@ -1,0 +1,16 @@
+{
+  "name": "star-sport-hindi",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Naveen Rathore",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ejs": "^4.0.1",
+    "express": "^5.2.1"
+  }
+}

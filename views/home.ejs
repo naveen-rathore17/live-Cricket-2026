@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IPL 2026 & T20 World Cup Live</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body
+    class="bg-gradient-to-r from-blue-900 via-black to-red-900 min-h-screen flex flex-col justify-between"
+  >
+    <!-- NAVBAR -->
+    <nav class="bg-black/40 backdrop-blur-md border-b border-white/10">
+      <div
+        class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 text-white"
+      >
+        <h1 class="text-lg md:text-xl font-bold tracking-wide">
+          🏏 Live Cricket
+        </h1>
+
+        <div class="flex gap-3 flex-wrap justify-center">
+          <a
+            href="/"
+            class="px-4 py-2 text-sm md:text-base rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300 shadow-md"
+          >
+            Home
+          </a>
+
+          <a
+            href="/help"
+            class="px-4 py-2 text-sm md:text-base rounded-lg bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 hover:from-red-600 hover:via-orange-600 hover:to-yellow-500 transition duration-300 shadow-md"
+          >
+            Help
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div
+      class="flex flex-col items-center flex-grow text-white px-4 md:px-6 py-8 md:py-10 space-y-6 md:space-y-8"
+    >
+      <!-- SLIDER -->
+      <div
+        class="relative w-full max-w-5xl h-52 sm:h-64 md:h-[450px] overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl border border-white/20"
+      >
+        <img
+          id="slider"
+          src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5434/1772202435434-i"
+          class="w-full h-full object-cover transition-all duration-700"
+        />
+
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <!-- Logo -->
+        <div
+          class="absolute top-3 left-3 bg-white/10 backdrop-blur-md px-2 py-1 md:px-3 md:py-2 rounded-xl"
+        >
+          <img
+            src="https://cdn.smartads.in/images/product/television/Star-Sports-1-Hindi-HD.png"
+            alt="Star Sports Logo"
+            class="w-14 md:w-24 rounded-full"
+          />
+        </div>
+
+        <!-- Arrows -->
+        <button
+          onclick="prevSlide()"
+          class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white text-2xl md:text-3xl px-3 py-1 md:px-4 md:py-2 rounded-full backdrop-blur-md"
+        >
+          ❮
+        </button>
+
+        <button
+          onclick="nextSlide()"
+          class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white text-2xl md:text-3xl px-3 py-1 md:px-4 md:py-2 rounded-full backdrop-blur-md"
+        >
+          ❯
+        </button>
+      </div>
+
+      <!-- Heading -->
+      <h1
+        class="text-2xl sm:text-3xl md:text-6xl font-extrabold text-center leading-tight"
+      >
+        <span class="text-yellow-400">IPL 2026</span>
+        <span class="text-white">&</span>
+        <span class="text-blue-400">T20 World Cup</span>
+      </h1>
+
+      <h2 class="text-lg sm:text-xl md:text-3xl font-bold text-red-500">
+        LIVE STREAMING
+      </h2>
+
+      <!-- Button -->
+      <a href="/watch-live">
+        <button
+          class="mt-4 px-6 sm:px-8 md:px-10 py-3 md:py-4 text-base md:text-lg font-bold rounded-full bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 shadow-2xl hover:scale-110 hover:shadow-red-500/50 transition-all duration-300 ease-in-out"
+        >
+          ▶ Watch Live Now
+        </button>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer
+      class="bg-black/40 text-center text-gray-300 py-3 md:py-4 backdrop-blur-md border-t border-white/10"
+    >
+      <p class="text-xs sm:text-sm md:text-base">
+        © 2026 Live Cricket Stream | Developed by
+        <span class="text-yellow-400 font-semibold">Naveen Rathore</span>
+      </p>
+    </footer>
+
+    <!-- Slider Script same as before -->
+     <script>
+  const images = [
+    "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5434/1772202435434-i",
+    "https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/2163/1770273252163-h",
+    "https://khelnow.com/_next/image?url=https%3A%2F%2Fassets.khelnow.com%2Fnews%2Fuploads%2F2026%2F02%2FT20-wc-Trophy-Lead.jpg&w=1920&q=75"
+  ];
+
+  let index = 0;
+  const slider = document.getElementById("slider");
+
+  function showSlide(i) {
+    slider.src = images[i];
+  }
+
+  function nextSlide() {
+    index = (index + 1) % images.length;
+    showSlide(index);
+  }
+
+  function prevSlide() {
+    index = (index - 1 + images.length) % images.length;
+    showSlide(index);
+  }
+
+  setInterval(nextSlide, 4000);
+</script>
+  </body>
+</html>
