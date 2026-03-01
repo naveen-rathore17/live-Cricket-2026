@@ -1,7 +1,5 @@
 const express = require("express");
-const path = require("path");
 const app = express();
-app.use(express.static(path.join(__dirname, "public")));
 
 app.set("view engine", "ejs");
 
@@ -11,10 +9,9 @@ app.get("/", (req, res) => {
 app.get("/help", (req, res) => {
   res.render("help");
 });
-app.get('/watch-live',(req,res)=>{
-  res.redirect('https://modderguy-star-sports-2hd-hindi.pages.dev/')
-})
-
+app.get("/watch-live", (req, res) => {
+  res.redirect("https://modderguy-star-sports-2hd-hindi.pages.dev/");
+});
 
 const port = process.env.PORT || 3000;
 
