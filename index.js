@@ -12,6 +12,9 @@ app.get("/help", (req, res) => {
 app.get("/watch-live", (req, res) => {
   res.redirect("https://modderguy-star-sports-2hd-hindi.pages.dev/");
 });
+app.get('/legal',(req,res)=>{
+  res.render('info')
+})
 
 const port = process.env.PORT || 3000;
 
