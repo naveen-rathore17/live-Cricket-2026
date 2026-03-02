@@ -116,40 +116,79 @@
       </h2>
 
       <!-- Match Info Card -->
+      <!-- Match Info Container -->
       <div
-        class="max-w-md mx-auto mt-4 bg-gray-900 text-white p-6 rounded-2xl shadow-lg text-center space-y-4"
+        class="flex flex-col md:flex-row justify-center items-stretch gap-6 mt-6 px-4 md:px-0"
       >
-        <!-- Teams with flags -->
-        <div class="flex justify-center items-center gap-4 text-xl font-bold">
-          <div class="flex items-center gap-2">
-            <img
-              src="https://flagcdn.com/za.svg"
-              alt="South Africa Flag"
-              class="w-8 h-6 rounded-sm"
-            />
-            <span class="text-green-500">SA</span>
+        <!-- Match 1 -->
+        <div
+          class="flex-1 bg-gray-900 text-white p-6 rounded-2xl shadow-lg text-center space-y-4 flex flex-col"
+        >
+          <div class="flex justify-center items-center gap-4 text-xl font-bold">
+            <div class="flex items-center gap-2">
+              <img
+                src="https://flagcdn.com/za.svg"
+                alt="South Africa Flag"
+                class="w-8 h-6 rounded-sm"
+              />
+              <span class="text-green-500">SA</span>
+            </div>
+            <span class="text-white text-2xl font-extrabold">vs</span>
+            <div class="flex items-center gap-2">
+              <img
+                src="https://flagcdn.com/nz.svg"
+                alt="New Zealand Flag"
+                class="w-8 h-6 rounded-sm"
+              />
+              <span class="text-white">NZ</span>
+            </div>
           </div>
-          <span class="text-white text-2xl font-extrabold">vs</span>
-          <div class="flex items-center gap-2">
-            <img
-              src="https://flagcdn.com/nz.svg"
-              alt="New Zealand Flag"
-              class="w-8 h-6 rounded-sm"
-            />
-            <span class="text-white">NZ</span>
+          <div class="text-sm sm:text-base md:text-lg text-gray-300 mt-auto">
+            📅 Date:
+            <span class="text-yellow-400 font-semibold">4 March 2026</span
+            ><br />
+            🏟 Venue:
+            <span class="text-yellow-400 font-semibold"
+              >Eden Gardens, Kolkata</span
+            >
           </div>
+          <div id="countdown1" class="text-3xl font-mono mt-2"></div>
         </div>
 
-        <!-- Date & Venue -->
-        <div class="text-sm sm:text-base md:text-lg text-gray-300">
-          📅 Date: <span class="text-yellow-400 font-semibold">4 March 2026</span><br />
-          🏟 Venue: <span class="text-yellow-400 font-semibold">Eden Gardens, Kolkata</span>
+        <!-- Match 2 -->
+        <div
+          class="flex-1 bg-gray-900 text-white p-6 rounded-2xl shadow-lg text-center space-y-4 flex flex-col"
+        >
+          <div class="flex justify-center items-center gap-4 text-xl font-bold">
+            <div class="flex items-center gap-2">
+              <img
+                src="https://flagcdn.com/in.svg"
+                alt="India Flag"
+                class="w-8 h-6 rounded-sm"
+              />
+              <span class="text-blue-500">IND</span>
+            </div>
+            <span class="text-white text-2xl font-extrabold">vs</span>
+            <div class="flex items-center gap-2">
+              <img
+                src="https://flagcdn.com/32x24/gb-eng.png"
+                alt="Pakistan Flag"
+                class="w-8 h-6 rounded-sm"
+              />
+              <span class="text-white">ENG</span>
+            </div>
+          </div>
+          <div class="text-sm sm:text-base md:text-lg text-gray-300 mt-auto">
+            📅 Date:
+            <span class="text-yellow-400 font-semibold">5 March 2026</span
+            ><br />
+            🏟 Venue:
+            <span class="text-yellow-400 font-semibold"
+              >Wankhede Stadium, Mumbai</span
+            >
+          </div>
+          <div id="countdown2" class="text-3xl font-mono mt-2"></div>
         </div>
-
-        <!-- Countdown -->
-        <div id="countdown" class="text-3xl font-mono mt-2"></div>
-
-        
       </div>
 
       <!-- Watch Live Button -->
@@ -208,32 +247,57 @@
 
       setInterval(nextSlide, 4000);
 
-      // Match Countdown
-      const matchDate = new Date("2026-03-04 19:00:00").getTime();
-      const countdownEl = document.getElementById("countdown");
+      // Match 1 Countdown
+      const matchDate1 = new Date("2026-03-04 19:00:00").getTime();
+      const countdownEl1 = document.getElementById("countdown1");
 
-      function updateCountdown() {
+      function updateCountdown1() {
         const now = new Date().getTime();
-        const distance = matchDate - now;
+        const distance = matchDate1 - now;
 
         if (distance < 0) {
-          countdownEl.innerHTML = "Match Streaming Live 🔴";
-          clearInterval(interval);
+          countdownEl1.innerHTML = "Match Streaming Live 🔴";
           return;
         }
 
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
         );
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        countdownEl1.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
       }
 
-      const interval = setInterval(updateCountdown, 1000);
-      updateCountdown();
+      // Match 2 Countdown
+      const matchDate2 = new Date("2026-03-05 19:00:00").getTime();
+      const countdownEl2 = document.getElementById("countdown2");
+
+      function updateCountdown2() {
+        const now = new Date().getTime();
+        const distance = matchDate2 - now;
+
+        if (distance < 0) {
+          countdownEl2.innerHTML = "Match Streaming Live 🔴";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownEl2.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }
+
+      // Start countdowns
+      setInterval(updateCountdown1, 1000);
+      setInterval(updateCountdown2, 1000);
+      updateCountdown1();
+      updateCountdown2();
     </script>
   </body>
 </html>
