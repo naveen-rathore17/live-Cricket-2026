@@ -15,6 +15,10 @@ app.get("/watch-live", (req, res) => {
 app.get('/legal',(req,res)=>{
   res.render('info')
 })
+
+app.get('/squads',(req,res)=>{
+  res.render("squad")
+})
  
 
 const port = process.env.PORT || 3000;

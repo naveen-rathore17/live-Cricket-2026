@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>T20 World Cup 2026 Super 8 Squads</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-6">
+  <h1 class="text-4xl font-extrabold text-center mb-8 text-yellow-400">
+    T20 World Cup 2026 SemiFinals Teams
+  </h1>
+
+  <% 
+    // Top 4 semifinal teams
+    let top4 = [
+      {name:"India", flag:"https://flagcdn.com/in.svg"},
+      {name:"England", flag:"https://flagcdn.com/gb-eng.svg"},
+      {name:"New Zealand", flag:"https://flagcdn.com/nz.svg"},
+      {name:"South Africa", flag:"https://flagcdn.com/za.svg"}
+    ];
+
+    // Squads
+    let squads = {
+      India: ["Suryakumar Yadav (c)", "Abhishek Sharma", "Tilak Varma", "Sanju Samson", "Shivam Dube", "Ishan Kishan", "Hardik Pandya", "Arshdeep Singh", "Jasprit Bumrah", "Varun Chakaravarthy", "Kuldeep Yadav", "Axar Patel", "Washington Sundar", "Rinku Singh", "Harshit Rana"],
+      England: ["Harry Brook (C)", "Rehan Ahmed", "Jofra Archer", "Tom Banton", "Jacob Bethell", "Jos Buttler", "Sam Curran", "Liam Dawson", "Ben Duckett", "Will Jacks", "Jamie Overton", "Adil Rashid", "Phil Salt", "Josh Tongue", "Luke Wood"],
+      "New Zealand": ["Mitchell Santner (C)", "Finn Allen", "Mark Chapman", "Devon Conway", "Jacob Duffy", "Lockie Ferguson", "Matt Henry", "Daryl Mitchell", "James Neesham", "Glenn Phillips", "Rachin Ravindra", "Tim Seifert", "Ish Sodhi", "Kyle Jamieson"],
+      "South Africa": ["Aiden Markram (C)", "Quinton de Kock", "Dewald Brevis", "David Miller", "George Linde", "Corbin Bosch", "Kagiso Rabada", "Jason Smith", "Anrich Nortje", "Lungi Ngidi", "Ryan Rickelton", "Marco Jansen", "Tristan Stubbs", "Kwena Maphaka"]
+    };
+
+    let flags = {
+      India:"https://flagcdn.com/in.svg",
+      England:"https://flagcdn.com/gb-eng.svg",
+      "New Zealand":"https://flagcdn.com/nz.svg",
+      "South Africa":"https://flagcdn.com/za.svg"
+    };
+  %>
+
+  <!-- Top 4 Semifinal Teams -->
+  <div class="flex flex-wrap justify-center items-center gap-6 mb-10">
+    <% for(let i=0; i<top4.length; i++) { %>
+      <div class="flex flex-col items-center bg-gray-800 p-4 rounded-xl shadow-lg w-28 hover:scale-105 transition-transform duration-300">
+        <img src="<%= top4[i].flag %>" alt="<%= top4[i].name %> Flag" class="w-12 h-8 rounded-sm mb-2" />
+        <span class="font-bold text-center text-white"><%= top4[i].name %></span>
+      </div>
+    <% } %>
+  </div>
+
+  <!-- Squads -->
+  <% for(let teamName in squads) { %>
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg mb-8">
+      <!-- Team Header -->
+      <div class="flex items-center gap-4 mb-4">
+        <img src="<%= flags[teamName] %>" alt="<%= teamName %> Flag" class="w-10 h-6 rounded-sm" />
+        <h2 class="text-2xl font-bold text-white"><%= teamName %> Squad</h2>
+      </div>
+
+      <!-- Players 1 line me 3 per row -->
+      <div class="grid grid-cols-3 gap-2 text-sm sm:text-base">
+        <% for(let j=0; j<squads[teamName].length; j++) { %>
+          <div class="bg-gray-700 p-2 rounded-md text-center hover:bg-yellow-500 hover:text-gray-900 transition-colors duration-300">
+            <%= squads[teamName][j] %>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  <% } %>
+   <div class="text-center mt-6">
+      <a href="/" class="inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-700 transition-all">Go Back Home</a>
+    </div>
+
+  <footer class="text-center text-gray-400 mt-10">
+    🏏 T20 World Cup 2026 SemiFinal Teams | Info based on official squad announcements
+  </footer>
+</body>
+</html>
