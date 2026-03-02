@@ -67,7 +67,7 @@
       >
         <img
           id="slider"
-          src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5434/1772202435434-i"
+          src="https://images.timesnownews.com/thumb/msid-153611883,thumbsize-89256,width-1280,height-720,resizemode-75/153611883.jpg"
           class="w-full h-full object-cover transition-all duration-700"
         />
 
@@ -115,18 +115,44 @@
         LIVE STREAMING 🔴
       </h2>
 
+      <!-- Match Info Card -->
+      <div
+        class="max-w-md mx-auto mt-4 bg-gray-900 text-white p-6 rounded-2xl shadow-lg text-center space-y-4"
+      >
+        <!-- Teams with flags -->
+        <div class="flex justify-center items-center gap-4 text-xl font-bold">
+          <div class="flex items-center gap-2">
+            <img
+              src="https://flagcdn.com/za.svg"
+              alt="South Africa Flag"
+              class="w-8 h-6 rounded-sm"
+            />
+            <span class="text-green-500">SA</span>
+          </div>
+          <span class="text-white text-2xl font-extrabold">vs</span>
+          <div class="flex items-center gap-2">
+            <img
+              src="https://flagcdn.com/nz.svg"
+              alt="New Zealand Flag"
+              class="w-8 h-6 rounded-sm"
+            />
+            <span class="text-white">NZ</span>
+          </div>
+        </div>
 
+        <!-- Date & Venue -->
+        <div class="text-sm sm:text-base md:text-lg text-gray-300">
+          📅 Date: <span class="text-yellow-400 font-semibold">4 March 2026</span><br />
+          🏟 Venue: <span class="text-yellow-400 font-semibold">Eden Gardens, Kolkata</span>
+        </div>
 
-      <!-- match countdowm -->
+        <!-- Countdown -->
+        <div id="countdown" class="text-3xl font-mono mt-2"></div>
 
+        
+      </div>
 
-
-    <div class="max-w-md mx-auto mt-8 bg-gray-800 text-white p-6 rounded-2xl shadow-lg text-center">
-  <h2 class="text-2xl font-bold mb-4"><span class="text-orange-500">IND</span> vs <span class="text-purple-600">WI</span></h2>
-  <div id="countdown" class="text-3xl font-mono"></div>
-</div>
-
-      <!-- Button -->
+      <!-- Watch Live Button -->
       <a href="/watch-live">
         <button
           class="mt-4 px-6 sm:px-8 md:px-10 py-3 md:py-4 text-base md:text-lg font-bold rounded-full bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 shadow-2xl hover:scale-110 hover:shadow-red-500/50 transition-all duration-300 ease-in-out"
@@ -153,13 +179,14 @@
       </span>
     </footer>
 
-    <!-- Slider Script same as before -->
+    <!-- Scripts -->
     <script>
+      // Slider
       const images = [
-        "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5434/1772202435434-i",
+        "https://images.timesnownews.com/thumb/msid-153611883,thumbsize-89256,width-1280,height-720,resizemode-75/153611883.jpg",
         "https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/2163/1770273252163-h",
         "https://khelnow.com/_next/image?url=https%3A%2F%2Fassets.khelnow.com%2Fnews%2Fuploads%2F2026%2F02%2FT20-wc-Trophy-Lead.jpg&w=1920&q=75",
-        "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/1554/1772279231554-i"
+        "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/1554/1772279231554-i",
       ];
 
       let index = 0;
@@ -181,42 +208,32 @@
 
       setInterval(nextSlide, 4000);
 
-   
+      // Match Countdown
+      const matchDate = new Date("2026-03-04 19:00:00").getTime();
+      const countdownEl = document.getElementById("countdown");
 
-      // Match dountdown
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = matchDate - now;
 
-   
-  // Set match date & time (YYYY-MM-DD HH:MM:SS)
-  const matchDate = new Date("2026-03-01 19:00:00").getTime(); // change date/time
+        if (distance < 0) {
+          countdownEl.innerHTML = "Match Streaming Live 🔴";
+          clearInterval(interval);
+          return;
+        }
 
-  const countdownEl = document.getElementById("countdown");
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = matchDate - now;
+        countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }
 
-    if (distance < 0) {
-      countdownEl.innerHTML = "Match Streaming Live 🔴";
-      clearInterval(interval);
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-  }
-
-  // Update every second
-  const interval = setInterval(updateCountdown, 1000);
-  updateCountdown(); // initial call
-
-
-
-
-
+      const interval = setInterval(updateCountdown, 1000);
+      updateCountdown();
     </script>
   </body>
 </html>

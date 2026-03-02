@@ -16,8 +16,15 @@ app.get('/legal',(req,res)=>{
   res.render('info')
 })
 
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+
+
+
+
+// Live link => https://allrounderid2.pages.dev/jjiotv/player?id=1985
