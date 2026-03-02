@@ -15,7 +15,7 @@ app.get("/watch-live", (req, res) => {
 app.get('/legal',(req,res)=>{
   res.render('info')
 })
-
+ 
 
 const port = process.env.PORT || 3000;
 
