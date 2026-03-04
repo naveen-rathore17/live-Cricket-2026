@@ -13,13 +13,13 @@ let onlineUsers = 0;
 
 io.on("connection", (socket) => {
   onlineUsers++;
-  console.log("User Connected:", onlineUsers);
+  // console.log("User Connected:", onlineUsers);
 
   io.emit("updateUsers", onlineUsers);
 
   socket.on("disconnect", () => {
     onlineUsers--;
-    console.log("User Disconnected:", onlineUsers);
+    // console.log("User Disconnected:", onlineUsers);
 
     io.emit("updateUsers", onlineUsers);
   });

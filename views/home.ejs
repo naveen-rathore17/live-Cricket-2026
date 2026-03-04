@@ -67,7 +67,7 @@
       >
         <img
           id="slider"
-          src="https://images.timesnownews.com/thumb/msid-153611883,thumbsize-89256,width-1280,height-720,resizemode-75/153611883.jpg"
+          src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/8928/1772438958928-i"
           class="w-full h-full object-cover transition-all duration-700"
         />
 
@@ -132,45 +132,12 @@
       <div
         class="flex flex-col md:flex-row justify-center items-stretch gap-6 mt-6 px-4 md:px-0"
       >
+    
         <!-- Match 1 -->
         <div
           class="flex-1 bg-gray-900 text-white p-6 rounded-2xl shadow-lg text-center space-y-4 flex flex-col"
         >
-          <div class="flex justify-center items-center gap-4 text-xl font-bold">
-            <div class="flex items-center gap-2">
-              <img
-                src="https://flagcdn.com/za.svg"
-                alt="South Africa Flag"
-                class="w-8 h-6 rounded-sm"
-              />
-              <span class="text-green-500">SA</span>
-            </div>
-            <span class="text-white text-2xl font-extrabold">vs</span>
-            <div class="flex items-center gap-2">
-              <img
-                src="https://flagcdn.com/nz.svg"
-                alt="New Zealand Flag"
-                class="w-8 h-6 rounded-sm"
-              />
-              <span class="text-white">NZ</span>
-            </div>
-          </div>
-          <div class="text-sm sm:text-base md:text-lg text-gray-300 mt-auto">
-            📅 Date:
-            <span class="text-yellow-400 font-semibold">4 March 2026</span
-            ><br />
-            🏟 Venue:
-            <span class="text-yellow-400 font-semibold"
-              >Eden Gardens, Kolkata</span
-            >
-          </div>
-          <div id="countdown1" class="text-3xl font-mono mt-2"></div>
-        </div>
-
-        <!-- Match 2 -->
-        <div
-          class="flex-1 bg-gray-900 text-white p-6 rounded-2xl shadow-lg text-center space-y-4 flex flex-col"
-        >
+        <h1 class="text-2xl font-bold text-yellow-400">Semi-Final 2</h1>
           <div class="flex justify-center items-center gap-4 text-xl font-bold">
             <div class="flex items-center gap-2">
               <img
@@ -201,6 +168,44 @@
           </div>
           <div id="countdown2" class="text-3xl font-mono mt-2"></div>
         </div>
+
+           <!-- Match 1 -->
+        <div
+          class="flex-1 bg-gray-900 text-white p-6 rounded-2xl shadow-lg text-center space-y-4 flex flex-col"
+        >
+        <h1 class="text-2xl font-bold text-yellow-400">Final-2026</h1>
+          <div class="flex justify-center items-center gap-4 text-xl font-bold">
+            <div class="flex items-center gap-2">
+              <img
+                src="https://flagcdn.com/nz.svg"
+                alt="South Africa Flag"
+                class="w-8 h-6 rounded-sm"
+              />
+              <span class="white">NZ</span>
+            </div>
+            <span class="text-white text-2xl font-extrabold">vs</span>
+            <div class="flex items-center gap-2">
+              <img
+                 src="https://img.freepik.com/premium-vector/shield-banner_754950-1019.jpg"
+                alt="New Zealand Flag"
+                class="w-8 h-6 rounded-sm"
+              />
+              <span class="text-white">TBD</span>
+            </div>
+          </div>
+          <div class="text-sm sm:text-base md:text-lg text-gray-300 mt-auto">
+            📅 Date:
+            <span class="text-yellow-400 font-semibold">8 March 2026</span
+            ><br />
+            🏟 Venue:
+            <span class="text-yellow-400 font-semibold"
+              >Narendra Modi Stadium,Ahmedabad</span
+            >
+          </div>
+          <div id="countdown1" class="text-3xl font-mono mt-2"></div>
+        </div>
+
+
       </div>
 
       <a href="/squads" class="mt-4 w-full flex justify-center">
@@ -242,7 +247,7 @@
     <script>
       // Slider
       const images = [
-        "https://images.timesnownews.com/thumb/msid-153611883,thumbsize-89256,width-1280,height-720,resizemode-75/153611883.jpg",
+        "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/8928/1772438958928-i",
         "https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/2163/1770273252163-h",
         "https://khelnow.com/_next/image?url=https%3A%2F%2Fassets.khelnow.com%2Fnews%2Fuploads%2F2026%2F02%2FT20-wc-Trophy-Lead.jpg&w=1920&q=75",
         "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/1554/1772279231554-i",
@@ -268,7 +273,7 @@
       setInterval(nextSlide, 4000);
 
       // Match 1 Countdown
-      const matchDate1 = new Date("2026-03-04 19:00:00").getTime();
+      const matchDate1 = new Date("2026-03-08 19:00:00").getTime();
       const countdownEl1 = document.getElementById("countdown1");
 
       function updateCountdown1() {
