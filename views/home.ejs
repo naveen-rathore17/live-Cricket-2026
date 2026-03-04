@@ -115,6 +115,18 @@
         LIVE STREAMING 🔴
       </h2>
 
+      <!-- Live Users Counter -->
+      <div
+        class="bg-black/60 backdrop-blur-md px-6 py-3 rounded-xl shadow-lg border border-red-500/40"
+      >
+        <h3 class="text-lg md:text-xl font-bold text-red-400 text-center">
+          🔴 Live Users Watching:
+          <span id="liveUsers" class="text-yellow-400">0</span>
+        </h3>
+      </div>
+
+     
+
       <!-- Match Info Card -->
       <!-- Match Info Container -->
       <div
@@ -306,6 +318,16 @@
       setInterval(updateCountdown2, 1000);
       updateCountdown1();
       updateCountdown2();
+    </script>
+    <!-- Socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+      const socket = io();
+
+      socket.on("updateUsers", function (count) {
+        document.getElementById("liveUsers").innerText = count;
+      });
     </script>
   </body>
 </html>
