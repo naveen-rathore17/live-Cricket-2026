@@ -35,7 +35,8 @@ app.get("/help", (req, res) => {
 });
 
 app.get("/watch-live", (req, res) => {
-  res.redirect("https://modderguy-star-sports-2hd-hindi.pages.dev/");
+  // res.redirect("https://modderguy-star-sports-2hd-hindi.pages.dev/");
+  res.render("live")
 });
 
 app.get("/legal", (req, res) => {
