@@ -15,7 +15,7 @@
   </head>
 
   <body
-    class="bg-gradient-to-r from-black via-blue-950 to-black min-h-screen text-white"
+    class="bg-gradient-to-r from-black via-blue-950 to-black min-h-screen text-white flex flex-col"
   >
     <!-- Navbar -->
     <nav
@@ -31,67 +31,60 @@
       </div>
     </nav>
 
-    <!-- Page Heading -->
+    <!-- Main Content -->
+    <div class="flex-grow">
 
-    <div class="text-center mt-10">
-      <h1 class="text-4xl md:text-5xl font-extrabold">
-        🏏 Live Cricket Streaming
-      </h1>
+      <!-- Page Heading -->
+      <div class="text-center mt-10">
+        <h1 class="text-4xl md:text-5xl font-extrabold">
+          🏏 Live Cricket Streaming
+        </h1>
 
-      <p class="text-gray-400 mt-3">Watch match live in HD</p>
-    </div>
+        <p class="text-gray-400 mt-3">Watch match live in HD</p>
+      </div>
 
-    <!-- Video Section -->
+      <!-- Video Section -->
+      <div class="flex justify-center mt-10 px-4">
+        <div class="bg-black/70 p-6 rounded-2xl shadow-2xl max-w-4xl w-full">
 
-    <div class="flex justify-center mt-10 px-4">
-      <div class="bg-black/70 p-6 rounded-2xl shadow-2xl max-w-4xl w-full">
-        <!-- Live Badge -->
+          <!-- Live Badge -->
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center">
+              <span
+                class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse"
+              >
+                LIVE
+              </span>
 
-        <div class="flex items-center justify-between mb-4">
-          <div class="flex items-center">
-            <span
-              class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse"
+              <span class="ml-3 text-gray-300">Streaming Now</span>
+            </div>
+
+            <!-- Help Button -->
+            <button
+              onclick="openHelp()"
+              class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-semibold shadow-md"
             >
-              LIVE
-            </span>
-
-            <span class="ml-3 text-gray-300"> Streaming Now </span>
+              Help
+            </button>
           </div>
 
-          <!-- Help Button -->
-
-          <button
-            onclick="openHelp()"
-            class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-semibold shadow-md"
-          >
-            Help
-          </button>
-        </div>
-
-        <!-- Video Container -->
-
-        <div id="video-container" class="aspect-video w-full">
-          <iframe
-            class="w-full h-full rounded-xl shadow-lg"
-            src="https://allrounder-live.pages.dev/star/modder-guy"
-            frameborder="0"
-            allow="
-              accelerometer;
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              gyroscope;
-              picture-in-picture;
-            "
-            allowfullscreen
-          >
-          </iframe>
+          <!-- Video Container -->
+          <div id="video-container" class="aspect-video w-full">
+            <iframe
+              class="w-full h-full rounded-xl shadow-lg"
+              src="https://allrounder-live.pages.dev/star/modder-guy"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
         </div>
       </div>
+
     </div>
 
     <!-- Help Modal -->
-
     <div
       id="helpModal"
       class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50"
@@ -116,7 +109,6 @@
     </div>
 
     <!-- Footer -->
-
     <footer
       class="bg-black/50 backdrop-blur-md text-center text-gray-300 py-4 md:py-5 border-t border-white/20 text-sm md:text-base flex flex-col md:flex-row justify-center items-center gap-2"
     >
