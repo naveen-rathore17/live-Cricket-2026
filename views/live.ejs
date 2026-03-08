@@ -1,138 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
 
-    <title>CricPulse Live🔴</title>
-    <link
-      rel="icon"
-      href="https://thumbs.dreamstime.com/b/cricket-sport-comet-fire-tail-flying-throw-logo-isolated-symbol-icon-badge-89929962.jpg"
-      type="image/x-icon"
-    />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
+<title>CricPulse Live 🔴</title>
 
-  <body
-    class="bg-gradient-to-r from-black via-blue-950 to-black min-h-screen text-white flex flex-col"
-  >
-    <!-- Navbar -->
-    <nav
-      class="flex justify-between items-center p-4 bg-black/60 backdrop-blur-md shadow-lg"
-    >
-      <h1 class="text-2xl font-bold text-red-500">
-        Cric<span class="text-white">Pulse</span>
-      </h1>
+<link rel="icon"
+href="https://thumbs.dreamstime.com/b/cricket-sport-comet-fire-tail-flying-throw-logo-isolated-symbol-icon-badge-89929962.jpg"
+type="image/x-icon"/>
 
-      <div class="space-x-6 text-sm md:text-base">
-        <a href="/" class="hover:text-red-400 transition">Home</a>
-        <a href="/help" class="hover:text-red-400 transition">Help</a>
-      </div>
-    </nav>
+<script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Main Content -->
-    <div class="flex-grow">
+</head>
 
-      <!-- Page Heading -->
-      <div class="text-center mt-10">
-        <h1 class="text-4xl md:text-5xl font-extrabold">
-          🏏 Live Cricket Streaming
-        </h1>
+<body class="bg-gradient-to-r from-black via-blue-950 to-black min-h-screen text-white flex flex-col">
 
-        <p class="text-gray-400 mt-3">Watch match live in HD</p>
-      </div>
+<!-- Navbar -->
+<nav class="flex justify-between items-center px-4 py-3 bg-black/60 backdrop-blur-md shadow-lg">
 
-      <!-- Video Section -->
-      <div class="flex justify-center mt-10 px-4">
-        <div class="bg-black/70 p-6 rounded-2xl shadow-2xl max-w-4xl w-full">
+<h1 class="text-xl font-bold text-red-500">
+Cric<span class="text-white">Pulse</span>
+</h1>
 
-          <!-- Live Badge -->
-          <div class="flex items-center justify-between mb-4">
-            <div class="flex items-center">
-              <span
-                class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse"
-              >
-                LIVE
-              </span>
+<div class="space-x-4 text-sm">
+<a href="/" class="hover:text-red-400">Home</a>
+<a href="/help" class="hover:text-red-400">Help</a>
+</div>
 
-              <span class="ml-3 text-gray-300">Streaming Now</span>
-            </div>
+</nav>
 
-            <!-- Help Button -->
-            <button
-              onclick="openHelp()"
-              class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-semibold shadow-md"
-            >
-              Help
-            </button>
-          </div>
 
-          <!-- Video Container -->
-          <div id="video-container" class="aspect-video w-full">
-            <iframe
-              class="w-full h-full rounded-xl shadow-lg"
-              src="https://allrounder-live.pages.dev/star/modder-guy"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
-            </iframe>
-          </div>
-        </div>
-      </div>
+<!-- Main -->
+<div class="flex-grow">
 
-    </div>
+<!-- Heading -->
+<div class="text-center mt-8 px-3">
 
-    <!-- Help Modal -->
-    <div
-      id="helpModal"
-      class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50"
-    >
-      <div class="bg-gray-900 p-6 rounded-xl max-w-md w-full shadow-2xl">
-        <h2 class="text-2xl font-bold mb-4">Streaming Help</h2>
+<h1 class="text-2xl md:text-5xl font-extrabold">
+🏏 Live Cricket Streaming
+</h1>
 
-        <ul class="space-y-2 text-gray-300 text-sm">
-          <li>📶 Check your internet connection.</li>
-          <li>🔄 Refresh the page if video not loading.</li>
-          <li>🎧 Use headphones for better sound.</li>
-          <li>📱 Rotate phone for full screen.</li>
-        </ul>
+<p class="text-gray-400 mt-2 text-sm">
+Watch match live in HD
+</p>
 
-        <button
-          onclick="closeHelp()"
-          class="mt-6 w-full bg-red-600 hover:bg-red-700 py-2 rounded-lg"
-        >
-          Close
-        </button>
-      </div>
-    </div>
+</div>
 
-    <!-- Footer -->
-    <footer
-      class="bg-black/50 backdrop-blur-md text-center text-gray-300 py-4 md:py-5 border-t border-white/20 text-sm md:text-base flex flex-col md:flex-row justify-center items-center gap-2"
-    >
-      <span>© 2026 Live Cricket Stream</span>
-      <span class="hidden md:inline">|</span>
-      <span>
-        Developed by
-        <a
-          href="/"
-          class="text-yellow-400 font-semibold hover:text-yellow-300 transition-colors duration-300"
-        >
-          Naveen Rathore
-        </a>
-      </span>
-    </footer>
 
-    <script>
-      function openHelp() {
-        document.getElementById("helpModal").classList.remove("hidden");
-      }
+<!-- Video Section -->
+<div class="flex justify-center mt-8 px-3">
 
-      function closeHelp() {
-        document.getElementById("helpModal").classList.add("hidden");
-      }
-    </script>
-  </body>
+<div class="bg-black/70 p-3 md:p-6 rounded-2xl shadow-2xl w-full max-w-4xl">
+
+
+<!-- Top Bar -->
+<div class="flex items-center justify-between flex-nowrap mb-4">
+
+<!-- LEFT -->
+<div class="flex items-center gap-2">
+
+<span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse">
+LIVE
+</span>
+
+<span class="text-gray-300 text-xs sm:text-sm">
+Streaming Now
+</span>
+
+</div>
+
+
+<!-- RIGHT -->
+<div class="flex items-center gap-2">
+
+<!-- Live Users -->
+<div class="flex items-center gap-1 bg-red-600 text-white px-2 py-1 rounded-full text-xs font-bold">
+
+<span class="relative flex h-2 w-2">
+
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+
+<span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+
+</span>
+
+<span id="liveUsers">0</span> Live
+
+</div>
+
+
+<!-- Help Button -->
+<button
+onclick="openHelp()"
+class="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-md text-xs font-semibold">
+Help
+</button>
+
+</div>
+
+</div>
+
+
+<!-- Video -->
+<div id="video-container" class="aspect-video w-full">
+
+<iframe
+class="w-full h-full rounded-xl shadow-lg"
+src="https://allrounder-live.pages.dev/star/modder-guy"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Help Modal -->
+<div id="helpModal"
+class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-4">
+
+<div class="bg-gray-900 p-5 rounded-xl max-w-md w-full shadow-2xl">
+
+<h2 class="text-xl font-bold mb-4">
+Streaming Help
+</h2>
+
+<ul class="space-y-2 text-gray-300 text-sm">
+
+<li>📶 Check your internet connection.</li>
+<li>🔄 Refresh page if video not loading.</li>
+<li>🎧 Use headphones for better sound.</li>
+<li>📱 Rotate phone for full screen.</li>
+
+</ul>
+
+<button
+onclick="closeHelp()"
+class="mt-6 w-full bg-red-600 hover:bg-red-700 py-2 rounded-lg">
+
+Close
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- Footer -->
+<footer
+class="bg-black/50 border-t border-white/20 text-center py-4 text-xs">
+
+© 2026
+
+<span class="font-bold text-red-500">
+Cric<span class="text-white">Pulse</span>
+</span>
+
+• Developed by Naveen Rathore
+
+</footer>
+
+
+
+<script>
+
+function openHelp(){
+document.getElementById("helpModal").classList.remove("hidden")
+}
+
+function closeHelp(){
+document.getElementById("helpModal").classList.add("hidden")
+}
+
+</script>
+
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+
+const socket = io()
+
+socket.on("updateUsers", function(count){
+document.getElementById("liveUsers").innerText = count
+})
+
+</script>
+
+</body>
 </html>

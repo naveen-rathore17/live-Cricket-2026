@@ -1,75 +1,192 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>T20 World Cup 2026 Super 8 Squads</title>
+  <title>CricPulse | Final Teams Squad</title>
+   <link
+      rel="icon"
+      href="https://thumbs.dreamstime.com/b/cricket-sport-comet-fire-tail-flying-throw-logo-isolated-symbol-icon-badge-89929962.jpg"
+      type="image/x-icon"
+    />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
-<body class="bg-gray-900 text-white min-h-screen p-6">
-  <h1 class="text-4xl font-extrabold text-center mb-8 text-yellow-400">
-    T20 World Cup 2026 Final Teams Squad
-  </h1>
 
-  <% 
-    // Top 4 semifinal teams
-    let top4 = [
-      {name:"India", flag:"https://flagcdn.com/in.svg"},
-      
-      {name:"New Zealand", flag:"https://flagcdn.com/nz.svg"},
-      
-    ];
+<body class="bg-gradient-to-br from-black via-gray-900 to-black text-white min-h-screen">
 
-    // Squads
-    let squads = {
-      India: ["Suryakumar Yadav (c)", "Abhishek Sharma", "Tilak Varma", "Sanju Samson", "Shivam Dube", "Ishan Kishan", "Hardik Pandya", "Arshdeep Singh", "Jasprit Bumrah", "Varun Chakaravarthy", "Kuldeep Yadav", "Axar Patel", "Washington Sundar", "Rinku Singh", "Mohammed Siraj"],
-      
-      "New Zealand": ["Mitchell Santner (C)", "Finn Allen", "Mark Chapman", "Devon Conway", "Jacob Duffy", "Lockie Ferguson", "Matt Henry", "Daryl Mitchell", "James Neesham", "Glenn Phillips", "Rachin Ravindra", "Tim Seifert", "Ish Sodhi", "Kyle Jamieson"],
-      
-    };
+<!-- NAVBAR -->
 
-    let flags = {
-      India:"https://flagcdn.com/in.svg",
-      England:"https://flagcdn.com/gb-eng.svg",
-      "New Zealand":"https://flagcdn.com/nz.svg",
-      "South Africa":"https://flagcdn.com/za.svg"
-    };
-  %>
+<nav class="bg-black/70 backdrop-blur-lg border-b border-white/10 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
 
-  <!-- Top 4 Semifinal Teams -->
-  <div class="flex flex-wrap justify-center items-center gap-6 mb-10">
-    <% for(let i=0; i<top4.length; i++) { %>
-      <div class="flex flex-col items-center bg-gray-800 p-4 rounded-xl shadow-lg w-28 hover:scale-105 transition-transform duration-300">
-        <img src="<%= top4[i].flag %>" alt="<%= top4[i].name %> Flag" class="w-12 h-8 rounded-sm mb-2" />
-        <span class="font-bold text-center text-white"><%= top4[i].name %></span>
-      </div>
-    <% } %>
+    <h1 class="text-2xl md:text-3xl font-bold text-red-500">
+      Cric<span class="text-white">Pulse</span>
+    </h1>
+
+    <div class="flex gap-4 md:gap-6 font-semibold text-sm md:text-base">
+      <a href="/" class="hover:text-red-400 transition">Home</a>
+      <a href="/watch-live" class="hover:text-red-400 transition">Watch</a>
+      <a href="/help" class="hover:text-red-400 transition">Help</a>
+    </div>
+
   </div>
+</nav>
 
-  <!-- Squads -->
-  <% for(let teamName in squads) { %>
-    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg mb-8">
-      <!-- Team Header -->
-      <div class="flex items-center gap-4 mb-4">
-        <img src="<%= flags[teamName] %>" alt="<%= teamName %> Flag" class="w-10 h-6 rounded-sm" />
-        <h2 class="text-2xl font-bold text-white"><%= teamName %> Squad</h2>
-      </div>
+<!-- PAGE HEADER -->
 
-      <!-- Players 1 line me 3 per row -->
-      <div class="grid grid-cols-3 gap-2 text-sm sm:text-base">
-        <% for(let j=0; j<squads[teamName].length; j++) { %>
-          <div class="bg-gray-700 p-2 rounded-md text-center hover:bg-yellow-500 hover:text-gray-900 transition-colors duration-300">
-            <%= squads[teamName][j] %>
-          </div>
-        <% } %>
-      </div>
-    </div>
-  <% } %>
-   <div class="text-center mt-6">
-      <a href="/" class="inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-700 transition-all">Go Back Home</a>
-    </div>
+<div class="text-center mt-10 mb-10 px-4">
 
-  <footer class="text-center text-gray-400 mt-10">
-    🏏 T20 World Cup 2026 SemiFinal Teams | Info based on official squad announcements
-  </footer>
+<h1 class="text-5xl md:text-6xl font-extrabold text-center mb-8 bg-gradient-to-r from-blue-400 via-yellow-400 to-red-500 bg-clip-text text-transparent">
+  ICC T20 World Cup 2026
+</h1>
+
+<h2 class="text-center text-gray-300 text-lg mb-10">
+  Final Teams Squad
+</h2>
+
+</div>
+
+<% 
+let top4 = [
+{name:"India", flag:"https://flagcdn.com/in.svg"},
+{name:"New Zealand", flag:"https://flagcdn.com/nz.svg"},
+];
+
+let squads = {
+
+India: [
+"Suryakumar Yadav (c)",
+"Abhishek Sharma",
+"Tilak Varma",
+"Sanju Samson (wk)",
+"Shivam Dube",
+"Ishan Kishan",
+"Hardik Pandya",
+"Arshdeep Singh",
+"Jasprit Bumrah",
+"Varun Chakaravarthy",
+"Kuldeep Yadav",
+"Axar Patel",
+"Washington Sundar",
+"Rinku Singh",
+"Mohammed Siraj"
+],
+
+"New Zealand":[
+"Mitchell Santner (C)",
+"Finn Allen",
+"Mark Chapman",
+"Devon Conway",
+"Jacob Duffy",
+"Lockie Ferguson",
+"Matt Henry",
+"Daryl Mitchell",
+"James Neesham",
+"Glenn Phillips",
+"Rachin Ravindra",
+"Tim Seifert (wk)",
+"Ish Sodhi",
+"Kyle Jamieson"
+]
+
+};
+
+let flags = {
+India:"https://flagcdn.com/in.svg",
+"New Zealand":"https://flagcdn.com/nz.svg"
+};
+%>
+
+
+<!-- FINAL TEAMS -->
+
+<div class="flex flex-wrap justify-center gap-6 mb-12">
+
+<% for(let i=0;i<top4.length;i++){ %>
+
+<div class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl w-36 text-center hover:scale-105 transition duration-300 shadow-xl">
+
+<img src="<%= top4[i].flag %>" class="w-16 mx-auto mb-3 rounded-sm">
+
+<p class="font-bold text-lg"><%= top4[i].name %></p>
+
+</div>
+
+<% } %>
+
+</div>
+
+
+<!-- SQUADS -->
+
+<div class="max-w-6xl mx-auto px-4 space-y-10">
+
+<% for(let teamName in squads){ %>
+
+<div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-6 shadow-2xl">
+
+<!-- TEAM HEADER -->
+
+<div class="flex items-center gap-4 mb-6">
+
+<img src="<%= flags[teamName] %>" class="w-12 rounded">
+
+<h2 class="text-2xl md:text-3xl font-bold">
+<%= teamName %> Squad
+</h2>
+
+</div>
+
+
+<!-- PLAYERS GRID -->
+
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+<% for(let j=0;j<squads[teamName].length;j++){ %>
+
+<div class="bg-gray-800 hover:bg-yellow-400 hover:text-black text-center py-3 px-2 rounded-lg font-semibold transition duration-300 cursor-pointer shadow-md">
+
+<%= squads[teamName][j] %>
+
+</div>
+
+<% } %>
+
+</div>
+
+</div>
+
+<% } %>
+
+</div>
+
+
+<!-- ACTION BUTTON -->
+
+<div class="text-center mt-12">
+
+<a href="/">
+
+<button class="bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 text-black font-bold px-8 py-4 rounded-full text-lg hover:scale-110 transition shadow-xl">
+
+🏠 Back to Home
+
+</button>
+
+</a>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer class="text-center text-gray-400 mt-16 pb-6">
+
+🏏 CricPulse • T20 World Cup 2026 Final Squads
+
+</footer>
+
+
 </body>
 </html>
