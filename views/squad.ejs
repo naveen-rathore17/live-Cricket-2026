@@ -1,157 +1,306 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CricPulse | Final Teams Squad</title>
-   <link
-      rel="icon"
-      href="https://thumbs.dreamstime.com/b/cricket-sport-comet-fire-tail-flying-throw-logo-isolated-symbol-icon-badge-89929962.jpg"
-      type="image/x-icon"
-    />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
+<title>CricPulse | IPL 2026 Squads</title>
+
+<link
+rel="icon"
+href="https://thumbs.dreamstime.com/b/cricket-sport-comet-fire-tail-flying-throw-logo-isolated-symbol-icon-badge-89929962.jpg"
+/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+/* Animated Stadium Background */
+
+.bg-stadium{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url("https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/8736/1772978088736-i") top center/cover no-repeat;
+animation:zoomBg 25s infinite alternate ease-in-out;
+z-index:-2;
+}
+
+.bg-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.75);
+z-index:-1;
+}
+
+@keyframes zoomBg{
+0%{transform:scale(1);}
+100%{transform:scale(1.1);}
+}
+
+</style>
 
 </head>
 
-<body class="bg-gradient-to-br from-black via-gray-900 to-black text-white min-h-screen">
+<body class="text-white min-h-screen">
+
+<!-- BACKGROUND -->
+<div class="bg-stadium"></div>
+<div class="bg-overlay"></div>
+
 
 <!-- NAVBAR -->
 
 <nav class="bg-black/70 backdrop-blur-lg border-b border-white/10 sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
 
-    <h1 class="text-2xl md:text-3xl font-bold text-red-500">
-      Cric<span class="text-white">Pulse</span>
-    </h1>
+<div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
 
-    <div class="flex gap-4 md:gap-6 font-semibold text-sm md:text-base">
-      <a href="/" class="hover:text-red-400 transition">Home</a>
-      <a href="/watch-live" class="hover:text-red-400 transition">Watch</a>
-      <a href="/help" class="hover:text-red-400 transition">Help</a>
-    </div>
+<a href="/" class="text-3xl font-bold text-red-500">
+Cric<span class="text-white">Pulse</span>
+</a>
 
-  </div>
+<div class="flex gap-6 font-semibold">
+<a href="/" class="hover:text-red-400">Home</a>
+<a href="/watch-live" class="hover:text-red-400">Watch</a>
+<a href="/help" class="hover:text-red-400">Help</a>
+</div>
+
+</div>
+
 </nav>
+
 
 <!-- PAGE HEADER -->
 
-<div class="text-center mt-10 mb-10 px-4">
+<div class="text-center py-16 px-4 relative overflow-hidden">
 
-<h1 class="text-5xl md:text-6xl font-extrabold text-center mb-8 bg-gradient-to-r from-blue-400 via-yellow-400 to-red-500 bg-clip-text text-transparent">
-  ICC T20 World Cup 2026
-</h1>
+  <!-- Background Glow -->
+  <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+    <div class="w-72 h-72 bg-purple-600/20 blur-3xl rounded-full"></div>
+  </div>
 
-<h2 class="text-center text-gray-300 text-lg mb-10">
-  Final Teams Squad
-</h2>
+  <!-- Heading -->
+  <h1 class="relative text-5xl md:text-7xl font-extrabold tracking-tight 
+  bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 
+  bg-clip-text text-transparent drop-shadow-lg">
+
+    IPL 2026
+  </h1>
+
+  <!-- Subtitle -->
+  <p class="relative text-gray-300 mt-4 text-lg md:text-xl max-w-xl mx-auto">
+    All Teams Complete Squad • Latest Players List • Updated Auction Teams
+  </p>
+
+  <!-- Divider line -->
+  <div class="mt-6 w-24 h-1 mx-auto bg-gradient-to-r from-blue-400 to-pink-500 rounded-full"></div>
 
 </div>
 
-<% 
-let top4 = [
-{name:"India", flag:"https://flagcdn.com/in.svg"},
-{name:"New Zealand", flag:"https://flagcdn.com/nz.svg"},
-];
 
-let squads = {
+<%
 
-India: [
-"Suryakumar Yadav (c)",
-"Abhishek Sharma",
-"Tilak Varma",
-"Sanju Samson (wk)",
+let teams = {
+
+"Chennai Super Kings":{
+logo:"https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Chennai_Super_Kings_Logo.svg/250px-Chennai_Super_Kings_Logo.svg.png",
+players:[
+"Ruturaj Gaikwad (C)",
+"MS Dhoni (WK)",
+"Sanju Samson",
+"Dewald Brevis",
+"Ayush Mhatre",
+"Sarfaraz Khan",
+"Urvil Patel",
+"Kartik Sharma",
 "Shivam Dube",
-"Ishan Kishan",
-"Hardik Pandya",
-"Arshdeep Singh",
-"Jasprit Bumrah",
-"Varun Chakaravarthy",
-"Kuldeep Yadav",
-"Axar Patel",
-"Washington Sundar",
-"Rinku Singh",
-"Mohammed Siraj"
-],
-
-"New Zealand":[
-"Mitchell Santner (C)",
-"Finn Allen",
-"Mark Chapman",
-"Devon Conway",
-"Jacob Duffy",
-"Lockie Ferguson",
+"Jamie Overton",
+"Ramakrishna Ghosh",
+"Anshul Kamboj",
+"Aman Khan",
+"Prashant Veer",
+"Matthew Short",
+"Noor Ahmad",
+"Rahul Chahar",
+"Shreyas Gopal",
+"Khaleel Ahmed",
+"Mukesh Choudhary",
+"Nathan Ellis",
 "Matt Henry",
-"Daryl Mitchell",
-"James Neesham",
-"Glenn Phillips",
-"Rachin Ravindra",
-"Tim Seifert (wk)",
-"Ish Sodhi",
-"Kyle Jamieson"
+"Gurjapneet Singh"
 ]
+},
+
+"Mumbai Indians":{
+logo:"https://upload.wikimedia.org/wikipedia/en/c/cd/Mumbai_Indians_Logo.svg",
+players:[
+"Hardik Pandya (C)",
+"Rohit Sharma",
+"Suryakumar Yadav",
+"Tilak Varma",
+"Ryan Rickelton",
+"Robin Minz",
+"Quinton de Kock (WK)",
+"Mitchell Santner",
+"Will Jacks",
+"Corbin Bosch",
+"Sherfane Rutherford",
+"Naman Dhir",
+"Raj Angad Bawa",
+"Atharva Ankolekar",
+"Mayank Rawat",
+"Shardul Thakur",
+"Jasprit Bumrah",
+"Trent Boult",
+"Deepak Chahar",
+"Ashwani Kumar",
+"Raghu Sharma",
+"Mayank Markande",
+"Allah Mohammad Ghazanfar",
+"Mohammad Izhar",
+"Danish Malewar"
+]
+},
+
+"Royal Challengers Bengaluru":{
+logo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgW4ecfy4QlpfTyN4DFhnU09IzmqOy87lZnQ&s",
+players:[
+"Rajat Patidar (C)", "Virat Kohli", "Phil Salt", "Josh Hazlewood", 
+"Bhuvneshwar Kumar", "Krunal Pandya", "Yash Dayal", "Jitesh Sharma (WK)", 
+"Venkatesh Iyer", "Tim David", "Devdutt Padikkal", "Romario Shepherd", 
+"Nuwan Thushara", "Rasikh Salam", "Swapnil Singh", "Suyash Sharma", 
+"Jacob Bethell", "Jordan Cox", "Vicky Ostwal", "Abhinandan Singh", 
+"Mangesh Yadav", "Satvik Deswal", "Vihaan Malhotra", "Kanishk Chouhan", 
+"Jacob Duffy"
+]
+},
+
+"Kolkata Knight Riders":{
+logo:"https://upload.wikimedia.org/wikipedia/en/4/4c/Kolkata_Knight_Riders_Logo.svg",
+players:[
+"Ajinkya Rahane (C)", "Rinku Singh", "Sunil Narine", "Varun Chakaravarthy",
+"Cameron Green", "Matheesha Pathirana", "Rachin Ravindra",
+"Angkrish Raghuvanshi", "Harshit Rana", "Ramandeep Singh", "Vaibhav Arora",
+"Umran Malik", "Manish Pandey", "Rovman Powell", "Anukul Roy",
+"Finn Allen", "Tim Seifert", "Rahul Tripathi", "Akash Deep",
+"Tejasvi Singh", "Kartik Tyagi", "Prashant Solanki", "Daksh Kamra",
+"Sarthak Ranjan"
+]
+},
+
+"Delhi Capitals":{
+logo:"https://upload.wikimedia.org/wikipedia/en/2/2f/Delhi_Capitals.svg",
+players:[
+"Axar Patel (C)", "KL Rahul (WK)", "Kuldeep Yadav", "Mitchell Starc", 
+"Tristan Stubbs", "Abishek Porel", "Ashutosh Sharma", "Sameer Rizvi", 
+"T. Natarajan", "Mukesh Kumar", "Nitish Rana", "Auqib Nabi Dar", 
+"David Miller", "Ben Duckett", "Pathum Nissanka", "Lungi Ngidi", 
+"Kyle Jamieson", "Prithvi Shaw", "Karun Nair", "Dushmantha Chameera", 
+"Vipraj Nigam", "Madhav Tiwari", "Ajay Mandal", "Tripurana Vijay", 
+"Sahil Parakh"
+]
+},
+
+"Rajasthan Royals":{
+logo:"https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/This_is_the_logo_for_Rajasthan_Royals%2C_a_cricket_team_playing_in_the_Indian_Premier_League_%28IPL%29.svg/250px-This_is_the_logo_for_Rajasthan_Royals%2C_a_cricket_team_playing_in_the_Indian_Premier_League_%28IPL%29.svg.png",
+players:[
+"Riyan Parag (C)", "Yashasvi Jaiswal", "Ravindra Jadeja", "Sam Curran",
+"Shimron Hetmyer", "Dhruv Jurel (WK)", "Jofra Archer", "Ravi Bishnoi",
+"Tushar Deshpande", "Sandeep Sharma", "Nandre Burger", "Donovan Ferreira",
+"Vaibhav Sooryavanshi", "Shubham Dubey", "Kwena Maphaka", "Lhuan-dre Pretorius",
+"Adam Milne", "Sushant Mishra", "Kuldeep Sen", "Yudhvir Singh Charak",
+"Ravi Singh (WK)", "Yash Raj Punja", "Vignesh Puthur", "Aman Rao Perala",
+"Brijesh Sharma"
+]
+},
+
+"Sunrisers Hyderabad":{
+logo:"https://upload.wikimedia.org/wikipedia/en/thumb/5/51/Sunrisers_Hyderabad_Logo.svg/250px-Sunrisers_Hyderabad_Logo.svg.png",
+players:[
+"Pat Cummins (C)", "Travis Head", "Abhishek Sharma", "Heinrich Klaasen (WK)", 
+"Ishan Kishan", "Liam Livingstone", "Nitish Kumar Reddy", "Harshal Patel", 
+"Jaydev Unadkat", "Kamindu Mendis", "Brydon Carse", "Eshan Malinga", 
+"Jack Edwards", "Shivam Mavi", "Zeeshan Ansari", "Salil Arora", 
+"Aniket Verma", "Smaran Ravichandran", "Harsh Dubey", "Shivang Kumar", 
+"Sakib Hussain", "Onkar Tarmale", "Amit Kumar", "Praful Hinge", 
+"Krains Fuletra"
+]
+},
+
+"Gujarat Titans":{
+logo:"https://upload.wikimedia.org/wikipedia/en/0/09/Gujarat_Titans_Logo.svg",
+players:[
+"Shubman Gill (C)", "Rashid Khan", "Jos Buttler (WK)", "Mohammed Siraj", 
+"Kagiso Rabada", "Prasidh Krishna", "Sai Sudharsan", "Jason Holder", 
+"Rahul Tewatia", "Shahrukh Khan", "Washington Sundar", "Glenn Phillips", 
+"Sai Kishore", "Anuj Rawat", "Kumar Kushagra", "Ishant Sharma", 
+"Tom Banton", "Luke Wood", "Arshad Khan", "Gurnoor Brar", 
+"Jayant Yadav", "Manav Suthar", "Nishant Sindhu", "Ashok Sharma", 
+"Prithviraj Yarra"
+]
+},
+
+"Punjab Kings":{
+logo:"https://upload.wikimedia.org/wikipedia/en/d/d4/Punjab_Kings_Logo.svg",
+players:[
+"Shreyas Iyer (C)", "Arshdeep Singh", "Yuzvendra Chahal", "Marcus Stoinis",
+"Marco Jansen", "Shashank Singh", "Ben Dwarshuis", "Nehal Wadhera",
+"Prabhsimran Singh (WK)", "Priyansh Arya", "Mitchell Owen", "Cooper Connolly",
+"Azmatullah Omarzai", "Lockie Ferguson", "Vyshak Vijaykumar", "Yash Thakur",
+"Harpreet Brar", "Vishnu Vinod (WK)", "Xavier Bartlett", "Harnoor Singh",
+"Musheer Khan", "Suryansh Shedge", "Pyla Avinash", "Pravin Dubey",
+"Vishal Nishad"
+]
+},
+
+"Lucknow Super Giants":{
+logo:"https://upload.wikimedia.org/wikipedia/en/thumb/3/34/Lucknow_Super_Giants_Logo.svg/250px-Lucknow_Super_Giants_Logo.svg.png",
+players:[
+"Rishabh Pant (C/WK)", "Nicholas Pooran (WK)", "Mohammed Shami",
+"Mayank Yadav", "Avesh Khan", "Mitchell Marsh", "Aiden Markram",
+"Wanindu Hasaranga", "Anrich Nortje", "Josh Inglis (WK)", "Ayush Badoni",
+"Abdul Samad", "Shahbaz Ahmed", "Mohsin Khan", "Manimaran Siddharth",
+"Arjun Tendulkar", "Matthew Breetzke", "Himmat Singh", "Akshat Raghuwanshi",
+"Mukul Choudhary (WK)", "Naman Tiwari", "Arshin Kulkarni", "Digvesh Rathi",
+"Prince Yadav", "Akash Singh"
+]
+}
 
 };
 
-let flags = {
-India:"https://flagcdn.com/in.svg",
-"New Zealand":"https://flagcdn.com/nz.svg"
-};
 %>
 
 
-<!-- FINAL TEAMS -->
+<div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-<div class="flex flex-wrap justify-center gap-6 mb-12">
+<% for(let team in teams){ %>
 
-<% for(let i=0;i<top4.length;i++){ %>
-
-<div class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl w-36 text-center hover:scale-105 transition duration-300 shadow-xl">
-
-<img src="<%= top4[i].flag %>" class="w-16 mx-auto mb-3 rounded-sm">
-
-<p class="font-bold text-lg"><%= top4[i].name %></p>
-
-</div>
-
-<% } %>
-
-</div>
-
-
-<!-- SQUADS -->
-
-<div class="max-w-6xl mx-auto px-4 space-y-10">
-
-<% for(let teamName in squads){ %>
-
-<div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-6 shadow-2xl">
-
-<!-- TEAM HEADER -->
+<div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-6 shadow-2xl hover:scale-105 transition">
 
 <div class="flex items-center gap-4 mb-6">
 
-<img src="<%= flags[teamName] %>" class="w-12 rounded">
+<img src="<%= teams[team].logo %>" class="w-14">
 
-<h2 class="text-2xl md:text-3xl font-bold">
-<%= teamName %> Squad
+<h2 class="text-2xl font-bold">
+<%= team %>
 </h2>
 
 </div>
 
+<div class="grid grid-cols-2 gap-3">
 
-<!-- PLAYERS GRID -->
+<% teams[team].players.forEach(player=>{ %>
 
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-
-<% for(let j=0;j<squads[teamName].length;j++){ %>
-
-<div class="bg-gray-800 hover:bg-yellow-400 hover:text-black text-center py-3 px-2 rounded-lg font-semibold transition duration-300 cursor-pointer shadow-md">
-
-<%= squads[teamName][j] %>
-
+<div class="bg-gray-800 hover:bg-yellow-400 hover:text-black text-center py-2 px-2 rounded-lg font-semibold transition">
+<%= player %>
 </div>
 
-<% } %>
+<% }) %>
 
 </div>
 
@@ -162,31 +311,16 @@ India:"https://flagcdn.com/in.svg",
 </div>
 
 
-<!-- ACTION BUTTON -->
+<footer class="bg-black/50 border-t border-white/20 text-center py-5 text-sm mt-16">
 
-<div class="text-center mt-12">
+© 2026
+<span class="font-bold text-red-500">
+Cric<span class="text-white">Pulse</span>
+</span>
 
-<a href="/">
-
-<button class="bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 text-black font-bold px-8 py-4 rounded-full text-lg hover:scale-110 transition shadow-xl">
-
-🏠 Back to Home
-
-</button>
-
-</a>
-
-</div>
-
-
-<!-- FOOTER -->
-
-<footer class="text-center text-gray-400 mt-16 pb-6">
-
-🏏 CricPulse • T20 World Cup 2026 Final Squads
+• Developed by Naveen Rathore
 
 </footer>
-
 
 </body>
 </html>
