@@ -46,6 +46,9 @@ app.get("/legal", (req, res) => {
 app.get("/squads", (req, res) => {
   res.render("squad");
 });
+app.get("/watch-live-zeenews",(req,res)=>{
+  res.render("zeenews")
+})
 
 const port = process.env.PORT || 3000;
 
