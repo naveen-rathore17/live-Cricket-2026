@@ -6,6 +6,7 @@ const { Server } = require("socket.io");
 
 const io = new Server(server);
 
+app.use(express.urlencoded({extended:true}))
 app.set("view engine", "ejs");
 
 // Live Users Counter
@@ -48,6 +49,23 @@ app.get("/squads", (req, res) => {
 });
 app.get("/watch-live-zeenews",(req,res)=>{
   res.render("zeenews")
+})
+
+// Contact Page
+app.get("/contact",(req,res)=>{
+res.render("contact")
+})
+
+// Form Submit
+app.post("/contact",(req,res)=>{
+
+const {name,email,problem} = req.body
+
+console.log("User Problem:")
+console.log(name,email,problem)
+
+res.render("issue-succ")
+
 })
 
 const port = process.env.PORT || 3000;
