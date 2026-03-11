@@ -1,10 +1,17 @@
+// mongodb+srv://Naveen:naveen50944047@cluster0.5cbta7e.mongodb.net/problemDB?retryWrites=true&w=majority
+
 const express = require("express");
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
-
 const io = new Server(server);
+
+// DB connection
+require("./DB/connection")
+
+// Model import
+const Contact = require("./DB/contactModel")
 
 app.use(express.urlencoded({extended:true}))
 app.set("view engine", "ejs");
@@ -57,16 +64,34 @@ res.render("contact")
 })
 
 // Form Submit
-app.post("/contact",(req,res)=>{
+app.post("/contact", async (req,res)=>{
 
 const {name,email,problem} = req.body
 
-console.log("User Problem:")
-console.log(name,email,problem)
+try{
+
+await Contact.create({
+
+name,
+email,
+problem
+
+})
+
+console.log("Data Saved")
 
 res.render("issue-succ")
 
+}catch(err){
+
+console.log(err)
+
+res.send("Error Saving Data")
+
+}
+
 })
+
 
 const port = process.env.PORT || 3000;
 
