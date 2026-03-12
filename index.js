@@ -8,10 +8,10 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 
 // DB connection
-require("./DB/connection");
+require("./DB/connection.js");
 
 // Model import
-const Contact = require("./DB/ContactModel");
+const Contact = require("./DB/ContactModel.js");
 
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
