@@ -143,36 +143,69 @@
         </div>
       </div>
 
-      <!-- MATCH CARD -->
+     <!-- MATCH CARD -->
+<div class="flex justify-center mt-6">
+  <div
+    class="w-full max-w-md bg-gradient-to-br from-gray-900 via-black to-gray-900 p-[2px] rounded-3xl shadow-2xl"
+  >
+    <div class="bg-gray-900 rounded-3xl p-6 text-center space-y-6">
 
-      <!-- <div class="flex justify-center">
-        <div
-          class="w-full md:w-[420px] bg-gray-900 p-6 rounded-3xl shadow-xl border border-white/10 text-center space-y-4"
-        >
-          <h2 class="text-2xl font-bold text-yellow-400">FINAL 2026</h2>
+      <!-- UPCOMING TEXT -->
+      <p class="text-red-400 font-semibold animate-pulse">
+        🔴 Upcoming Live Match
+      </p>
 
-          <div class="flex justify-center items-center gap-6 text-xl font-bold">
-            <div class="flex flex-col items-center gap-2">
-              <img src="https://flagcdn.com/nz.svg" class="w-10" />
-              NZ
-            </div>
+      <!-- TITLE -->
+      <h2 class="text-xl md:text-2xl font-bold text-yellow-400 tracking-wide">
+        IPL 2026 OPENER
+      </h2>
 
-            <span class="text-2xl">VS</span>
+      <!-- TEAMS -->
+      <div class="flex justify-center items-center gap-8">
 
-            <div class="flex flex-col items-center gap-2">
-              <img src="https://flagcdn.com/in.svg" class="w-10" />
-              IND
-            </div>
-          </div>
-
-          <p class="text-gray-300">
-            📅 8 March 2026 <br />
-            🏟 Narendra Modi Stadium, Ahmedabad
-          </p>
-
-          <div id="countdown1" class="text-3xl font-mono text-yellow-400"></div>
+        <!-- TEAM 1 -->
+        <div class="flex flex-col items-center gap-2">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgW4ecfy4QlpfTyN4DFhnU09IzmqOy87lZnQ&s"
+            class="w-16 h-16 object-contain"
+          />
+          <span class="text-lg font-bold">RCB</span>
         </div>
-      </div> -->
+
+        <!-- VS BADGE -->
+        <div
+          class="px-4 py-2 rounded-full bg-red-600 text-white font-bold shadow-lg"
+        >
+          VS
+        </div>
+
+        <!-- TEAM 2 -->
+        <div class="flex flex-col items-center gap-2">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/5/51/Sunrisers_Hyderabad_Logo.svg/250px-Sunrisers_Hyderabad_Logo.svg.png"
+            class="w-16 h-16 object-contain"
+          />
+          <span class="text-lg font-bold">SRH</span>
+        </div>
+
+      </div>
+
+      <!-- MATCH DETAILS -->
+      <div class="text-gray-300 text-sm leading-relaxed">
+        📅 <span class="text-white font-semibold">28 March 2026</span>
+        <br />
+        🏟 <span class="text-white font-semibold">M. Chinnaswamy Stadium, Bengaluru</span>
+      </div>
+
+      <!-- COUNTDOWN -->
+      <div
+        id="countdown1"
+        class="text-3xl font-mono text-yellow-400 bg-black/50 py-3 rounded-lg border border-yellow-400/20"
+      ></div>
+
+    </div>
+  </div>
+</div>
 
       <!-- IPL ANNOUNCEMENT -->
 
@@ -420,7 +453,7 @@
 
       // MATCH COUNTDOWN
 
-      const matchDate = new Date("March 9, 2026 19:30:00").getTime();
+      const matchDate = new Date("March 28, 2026 19:30:00").getTime();
 
       const countdown = setInterval(function () {
         const now = new Date().getTime();
