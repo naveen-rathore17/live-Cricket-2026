@@ -1,4 +1,3 @@
-// mongodb+srv://Naveen:naveen50944047@cluster0.5cbta7e.mongodb.net/problemDB?retryWrites=true&w=majority
 
 const express = require("express");
 const app = express();
@@ -6,6 +5,7 @@ const http = require("http");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
+
 
 // DB connection
 require("./DB/connection")
