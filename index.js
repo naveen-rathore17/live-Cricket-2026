@@ -1,3 +1,4 @@
+require("dotenv").config();
 
 const express = require("express");
 const app = express();
@@ -6,14 +7,13 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 
-
 // DB connection
-require("./DB/connection")
+require("./DB/connection");
 
 // Model import
-const Contact = require("./DB/contactModel")
+const Contact = require("./DB/ContactModel");
 
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
 // Live Users Counter
@@ -21,14 +21,11 @@ let onlineUsers = 0;
 
 io.on("connection", (socket) => {
   onlineUsers++;
-  // console.log("User Connected:", onlineUsers);
 
   io.emit("updateUsers", onlineUsers);
 
   socket.on("disconnect", () => {
     onlineUsers--;
-    // console.log("User Disconnected:", onlineUsers);
-
     io.emit("updateUsers", onlineUsers);
   });
 });
@@ -43,8 +40,7 @@ app.get("/help", (req, res) => {
 });
 
 app.get("/watch-live", (req, res) => {
-  // res.redirect("https://modderguy-star-sports-2hd-hindi.pages.dev/");
-  res.render("live")
+  res.render("live");
 });
 
 app.get("/legal", (req, res) => {
@@ -54,44 +50,35 @@ app.get("/legal", (req, res) => {
 app.get("/squads", (req, res) => {
   res.render("squad");
 });
-app.get("/watch-live-zeenews",(req,res)=>{
-  res.render("zeenews")
-})
+
+app.get("/watch-live-zeenews", (req, res) => {
+  res.render("zeenews");
+});
 
 // Contact Page
-app.get("/contact",(req,res)=>{
-res.render("contact")
-})
+app.get("/contact", (req, res) => {
+  res.render("contact");
+});
 
 // Form Submit
-app.post("/contact", async (req,res)=>{
+app.post("/contact", async (req, res) => {
+  const { name, email, problem } = req.body;
 
-const {name,email,problem} = req.body
+  try {
+    await Contact.create({
+      name,
+      email,
+      problem,
+    });
 
-try{
+    console.log("Data Saved");
 
-await Contact.create({
-
-name,
-email,
-problem
-
-})
-
-console.log("Data Saved")
-
-res.render("issue-succ")
-
-}catch(err){
-
-console.log(err)
-
-res.send("Error Saving Data")
-
-}
-
-})
-
+    res.render("issue-succ");
+  } catch (err) {
+    console.log(err);
+    res.send("Error Saving Data");
+  }
+});
 
 const port = process.env.PORT || 3000;
 
