@@ -6,6 +6,7 @@ const http = require("http");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
+const path = require('path')
 
 // DB connection
 require("./DB/connection.js");
@@ -15,6 +16,8 @@ const Contact = require("./DB/ContactModel.js");
 
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static("public"));
 
 // Live Users Counter
 let onlineUsers = 0;
