@@ -58,6 +58,10 @@ app.get("/watch-live-zeenews", (req, res) => {
   res.render("zeenews");
 });
 
+app.get("/live-info",(req,res)=>{
+  res.render("liveNotice")
+})
+
 // Contact Page
 app.get("/contact", (req, res) => {
   res.render("contact");
