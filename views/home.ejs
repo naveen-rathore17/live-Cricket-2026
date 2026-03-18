@@ -269,7 +269,7 @@
           </button>
         </a>
 
-        <a href="/live-info">
+        <a href="/live-matches">
           <button
             class="w-[295px] py-3 text-lg rounded-full font-bold text-white bg-gradient-to-r from-[#0047AB] via-[#1E90FF] to-[#00BFFF] hover:scale-110 transition duration-300 shadow-xl"
             style="text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8)"
@@ -480,7 +480,13 @@
         if (distance < 0) {
           clearInterval(countdown);
 
-          document.getElementById("countdown1").innerHTML = "MATCH LIVE 🔴";
+          document.getElementById("countdown1").innerHTML = `
+          <div class="flex justify-center ">
+        <span class="bg-red-600 px-5 py-1 rounded-full text-xs sm:text-sm font-bold animate-pulse">
+          LIVE
+        </span>
+      </div>
+          `;
         }
       }, 1000);
     </script>

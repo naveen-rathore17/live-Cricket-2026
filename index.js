@@ -58,7 +58,7 @@ app.get("/watch-live-zeenews", (req, res) => {
   res.render("zeenews");
 });
 
-app.get("/live-info",(req,res)=>{
+app.get("/live-matches",(req,res)=>{
   res.render("liveNotice")
 })
 
