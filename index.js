@@ -43,7 +43,9 @@ app.get("/help", (req, res) => {
 });
 
 app.get("/watch-live", (req, res) => {
-  res.render("live");
+  res.render("live", {
+    streamUrl: process.env.STREAM_URL
+  });
 });
 
 app.get("/legal", (req, res) => {
@@ -55,7 +57,9 @@ app.get("/squads", (req, res) => {
 });
 
 app.get("/watch-live-zeenews", (req, res) => {
-  res.render("zeenews")
+  res.render("zeenews",{
+    streamNews: process.env.STREAM_NEWS_URL
+  })
 });
 
 app.get("/live-matches",(req,res)=>{
