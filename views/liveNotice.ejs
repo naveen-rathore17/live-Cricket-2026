@@ -24,9 +24,15 @@
       }
 
       @keyframes gradientMove {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
 
       /* 🔥 Mobile Optimization */
@@ -40,7 +46,9 @@
 
   <body class="min-h-screen text-white flex flex-col">
     <!-- NAVBAR -->
-    <nav class="flex justify-between items-center px-4 sm:px-6 md:px-8 py-4 bg-black/40 backdrop-blur-md md:backdrop-blur-xl border-b border-white/10 sticky top-0 z-50">
+    <nav
+      class="flex justify-between items-center px-4 sm:px-6 md:px-8 py-4 bg-black/40 backdrop-blur-md md:backdrop-blur-xl border-b border-white/10 sticky top-0 z-50"
+    >
       <a href="/" class="text-2xl md:text-3xl font-bold text-red-500">
         Cric<span class="text-white">Pulse</span>
       </a>
@@ -53,42 +61,56 @@
 
     <!-- MAIN -->
     <div class="flex-grow flex items-center justify-center px-4 relative">
-      
       <!-- Optimized Glow -->
-      <div class="absolute w-72 h-72 md:w-96 md:h-96 bg-blue-600 opacity-20 blur-xl md:blur-3xl rounded-full top-10 left-10"></div>
-      <div class="absolute w-72 h-72 md:w-96 md:h-96 bg-purple-600 opacity-20 blur-xl md:blur-3xl rounded-full bottom-10 right-10"></div>
+      <div
+        class="absolute w-72 h-72 md:w-96 md:h-96 bg-blue-600 opacity-20 blur-xl md:blur-3xl rounded-full top-10 left-10"
+      ></div>
+      <div
+        class="absolute w-72 h-72 md:w-96 md:h-96 bg-purple-600 opacity-20 blur-xl md:blur-3xl rounded-full bottom-10 right-10"
+      ></div>
 
-      <div class="max-w-6xl w-full bg-white/5 border border-white/10 rounded-3xl p-6 md:p-10 backdrop-blur-md md:backdrop-blur-xl shadow-lg md:shadow-2xl">
-
+      <div
+        class="max-w-6xl w-full bg-white/5 border border-white/10 rounded-3xl p-6 md:p-10 backdrop-blur-md md:backdrop-blur-xl shadow-lg md:shadow-2xl"
+      >
         <!-- HEADING -->
         <h1 class="flex flex-col items-center text-center mb-6">
-          <span class="text-3xl md:text-5xl font-extrabold text-yellow-400 tracking-wide">
+          <span
+            class="text-3xl md:text-5xl font-extrabold text-yellow-400 tracking-wide"
+          >
             🏏 IPL 2026
           </span>
         </h1>
 
         <!-- LIVE -->
         <div class="flex justify-center mb-4">
-          <span class="bg-red-600 px-5 py-1 rounded-full text-xs md:text-sm font-bold animate-pulse">
+          <span
+            class="bg-red-600 px-5 py-1 rounded-full text-xs md:text-sm font-bold animate-pulse"
+          >
             LIVE
           </span>
         </div>
 
-        <h2 class="text-2xl md:text-5xl font-extrabold text-center mb-10 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+        <h2
+          class="text-2xl md:text-5xl font-extrabold text-center mb-10 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+        >
           LIVE CRICKET EXPERIENCE
         </h2>
 
         <!-- MATCH CARDS -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-
           <!-- MATCH 1 -->
           <div class="relative group">
-            <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500 to-purple-600 opacity-10 md:opacity-20 blur-lg md:blur-xl group-hover:opacity-30 transition"></div>
+            <div
+              class="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500 to-purple-600 opacity-10 md:opacity-20 blur-lg md:blur-xl group-hover:opacity-30 transition"
+            ></div>
 
-            <div class="relative bg-black/80 backdrop-blur-md md:backdrop-blur-xl rounded-3xl p-5 md:p-6 border border-white/10 shadow-lg md:shadow-[0_0_40px_rgba(59,130,246,0.6)] transition-all duration-300 md:duration-500 hover:-translate-y-1 hover:scale-[1.02]">
-
+            <div
+              class="relative bg-black/80 backdrop-blur-md md:backdrop-blur-xl rounded-3xl p-5 md:p-6 border border-white/10 shadow-lg md:shadow-[0_0_40px_rgba(59,130,246,0.6)] transition-all duration-300 md:duration-500 hover:-translate-y-1 hover:scale-[1.02]"
+            >
               <div class="flex justify-between mb-4">
-                <span class="text-xs bg-blue-500/20 px-3 py-1 rounded-full text-blue-400">
+                <span
+                  class="text-xs bg-blue-500/20 px-3 py-1 rounded-full text-blue-400"
+                >
                   Match 1
                 </span>
                 <span class="text-xs text-gray-500">IPL T20</span>
@@ -96,7 +118,10 @@
 
               <div class="flex justify-between items-center mb-6">
                 <div class="flex flex-col items-center gap-2">
-                  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Royal_Challengers_Bengaluru_Logo.svg/250px-Royal_Challengers_Bengaluru_Logo.svg.png" class="w-12 h-12 md:h-14"/>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Royal_Challengers_Bengaluru_Logo.svg/250px-Royal_Challengers_Bengaluru_Logo.svg.png"
+                    class="w-12 h-12 md:h-14"
+                  />
                   <p class="text-xs md:text-sm text-gray-200">RCB</p>
                 </div>
 
@@ -106,21 +131,28 @@
                 </div>
 
                 <div class="flex flex-col items-center gap-2">
-                  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/51/Sunrisers_Hyderabad_Logo.svg/250px-Sunrisers_Hyderabad_Logo.svg.png" class="w-12 h-12 md:h-14"/>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/5/51/Sunrisers_Hyderabad_Logo.svg/250px-Sunrisers_Hyderabad_Logo.svg.png"
+                    class="w-12 h-12 md:h-14"
+                  />
                   <p class="text-xs md:text-sm text-gray-200">SRH</p>
                 </div>
               </div>
 
               <div class="text-center mb-4">
-                <p class="text-gray-500 text-xs md:text-sm">📍 Bengaluru</p>
+                <p class="text-gray-500 text-xs md:text-sm">📍M.Chinnaswamy Stadium, Bengaluru</p>
                 <p class="text-yellow-400 text-sm">28 March • 7:30 PM</p>
               </div>
 
               <div class="text-center mb-4">
-                <p id="countdown1" class="text-green-400 font-bold text-sm">Loading...</p>
+                <p id="countdown1" class="text-green-400 font-bold text-sm">
+                  Loading...
+                </p>
               </div>
 
-              <div class="text-center text-xs text-gray-600 border-t border-white/10 pt-3">
+              <div
+                class="text-center text-xs text-gray-600 border-t border-white/10 pt-3"
+              >
                 🎥 Live streaming will begin once the match starts
               </div>
             </div>
@@ -128,12 +160,17 @@
 
           <!-- MATCH 2 -->
           <div class="relative group">
-            <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500 to-blue-500 opacity-10 md:opacity-20 blur-lg md:blur-xl group-hover:opacity-30 transition"></div>
+            <div
+              class="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500 to-blue-500 opacity-10 md:opacity-20 blur-lg md:blur-xl group-hover:opacity-30 transition"
+            ></div>
 
-            <div class="relative bg-black/80 backdrop-blur-md md:backdrop-blur-xl rounded-3xl p-5 md:p-6 border border-white/10 shadow-lg md:shadow-[0_0_40px_rgba(168,85,247,0.6)] transition-all duration-300 md:duration-500 hover:-translate-y-1 hover:scale-[1.02]">
-
+            <div
+              class="relative bg-black/80 backdrop-blur-md md:backdrop-blur-xl rounded-3xl p-5 md:p-6 border border-white/10 shadow-lg md:shadow-[0_0_40px_rgba(168,85,247,0.6)] transition-all duration-300 md:duration-500 hover:-translate-y-1 hover:scale-[1.02]"
+            >
               <div class="flex justify-between mb-4">
-                <span class="text-xs bg-purple-500/20 px-3 py-1 rounded-full text-purple-400">
+                <span
+                  class="text-xs bg-purple-500/20 px-3 py-1 rounded-full text-purple-400"
+                >
                   Match 2
                 </span>
                 <span class="text-xs text-gray-500">IPL T20</span>
@@ -141,7 +178,10 @@
 
               <div class="flex justify-between items-center mb-6">
                 <div class="flex flex-col items-center gap-2">
-                  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Mumbai_Indians_Logo.svg/250px-Mumbai_Indians_Logo.svg.png" class="w-12 h-12 md:h-14"/>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Mumbai_Indians_Logo.svg/250px-Mumbai_Indians_Logo.svg.png"
+                    class="w-12 h-12 md:h-14"
+                  />
                   <p class="text-xs md:text-sm text-gray-200">MI</p>
                 </div>
 
@@ -151,34 +191,49 @@
                 </div>
 
                 <div class="flex flex-col items-center gap-2">
-                  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Kolkata_Knight_Riders_Logo.svg/250px-Kolkata_Knight_Riders_Logo.svg.png" class="w-12 h-12 md:h-14"/>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Kolkata_Knight_Riders_Logo.svg/250px-Kolkata_Knight_Riders_Logo.svg.png"
+                    class="w-12 h-12 md:h-14"
+                  />
                   <p class="text-xs md:text-sm text-gray-200">KKR</p>
                 </div>
               </div>
 
               <div class="text-center mb-4">
-                <p class="text-gray-500 text-xs md:text-sm">📍 Mumbai</p>
-                <p class="text-yellow-400 text-sm">29 March • 7:30 PM</p>
+                <p class="text-gray-500 text-xs md:text-sm">📍Wankhede Stadium, Mumbai</p>
+                <p class="text-yellow-400 text-sm ">29 March • 7:30 PM</p>
               </div>
 
               <div class="text-center mb-4">
-                <p id="countdown2" class="text-green-400 font-bold text-sm">Loading...</p>
+                <p id="countdown2" class="text-green-400 font-bold text-sm">
+                  Loading...
+                </p>
               </div>
 
-              <div class="text-center text-xs text-gray-600 border-t border-white/10 pt-3">
+              <div
+                class="text-center text-xs text-gray-600 border-t border-white/10 pt-3"
+              >
                 🎥 Live streaming will begin once the match starts
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
 
     <!-- FOOTER -->
-    <footer class="bg-black/50 border-t border-white/20 text-center py-4 text-xs">
-      © 2026 CricPulse • Developed by Naveen Rathore
+    <footer
+      class="bg-black/50 border-t border-white/20 text-center py-4 text-xs"
+    >
+      © 2026
+
+      <span class="font-bold text-red-500">
+        Cric<span class="text-white">Pulse</span>
+      </span>
+
+      • Developed by Naveen Rathore
     </footer>
+
 
     <!-- COUNTDOWN -->
     <script>
