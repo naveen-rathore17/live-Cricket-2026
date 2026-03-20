@@ -1,215 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>CricPulse Live-git Matches</title>
-   <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>CricPulse Live - Matches</title>
+
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <style>
-    .glow {
-      box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
-    }
+    <style>
+      body {
+        background: linear-gradient(-45deg, #000000, #020617, #0f172a, #000000);
+        background-size: 400% 400%;
+        animation: gradientMove 10s ease infinite;
+      }
 
-    body {
-      background: linear-gradient(-45deg, #000000, #020617, #0f172a, #000000);
-      background-size: 400% 400%;
-      animation: gradientMove 10s ease infinite;
-    }
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+  </head>
 
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-  </style>
-</head>
+  <body class="min-h-screen text-white flex flex-col">
+    <!-- NAVBAR -->
+    <nav
+      class="flex justify-between items-center px-4 sm:px-6 md:px-8 py-4 bg-black/40 backdrop-blur-xl border-b border-white/10 sticky top-0 z-50"
+    >
+      <a href="/" class="text-2xl md:text-3xl font-bold text-red-500">
+        Cric<span class="text-white">Pulse</span>
+      </a>
 
-<body class="min-h-screen bg-gradient-to-r from-black via-blue-950 to-black text-white flex flex-col">
-
-  <!-- NAVBAR -->
-  <nav class="flex justify-between items-center px-4 sm:px-6 md:px-8 py-4 bg-black/40 backdrop-blur-xl border-b border-white/10 sticky top-0 z-50">
-    <a href="/" class="text-2xl md:text-3xl font-bold text-red-500">
-          Cric<span class="text-white">Pulse</span>
-        </a>
-
-    <div class="space-x-3 sm:space-x-4 text-md sm:text-[16px] font-semibold">
-      <a href="/" class="hover:text-red-400 transition">Home</a>
-      <a href="/squads" class="hover:text-red-400 transition">Squad</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <div class="flex-grow flex items-center justify-center px-3 sm:px-6 relative">
-
-    <!-- Glow -->
-    <div class="absolute w-72 sm:w-96 h-72 sm:h-96 bg-blue-600 opacity-20 blur-3xl rounded-full top-10 left-5 sm:left-10"></div>
-    <div class="absolute w-72 sm:w-96 h-72 sm:h-96 bg-purple-600 opacity-20 blur-3xl rounded-full bottom-10 right-5 sm:right-10"></div>
-
-    <div class="max-w-6xl w-full bg-white/10 border border-white/10 rounded-3xl p-5 sm:p-8 md:p-10 backdrop-blur-xl shadow-2xl glow">
-
-      <!-- IPL HEADING -->
-      <h1 class="text-center text-2xl sm:text-3xl md:text-5xl font-extrabold text-yellow-400 mb-6">
-        🏏 IPL 2026
-      </h1>
-
-      <!-- LIVE BADGE -->
-      <div class="flex justify-center mb-4">
-        <span class="bg-red-600 px-5 py-1 rounded-full text-xs sm:text-sm font-bold animate-pulse">
-          LIVE
-        </span>
+      <div class="space-x-4 font-semibold">
+        <a href="/" class="hover:text-red-400 transition">Home</a>
+        <a href="/squads" class="hover:text-red-400 transition">Squad</a>
       </div>
+    </nav>
 
-      <!-- TITLE -->
-      <h2 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-center mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-        LIVE CRICKET EXPERIENCE
-      </h2>
+    <!-- MAIN -->
+    <div class="flex-grow flex items-center justify-center px-4 relative">
+      <!-- Glow BG -->
+      <div
+        class="absolute w-96 h-96 bg-blue-600 opacity-20 blur-3xl rounded-full top-10 left-10"
+      ></div>
+      <div
+        class="absolute w-96 h-96 bg-purple-600 opacity-20 blur-3xl rounded-full bottom-10 right-10"
+      ></div>
 
-      <!-- MATCH CARDS -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-10">
+      <div
+        class="max-w-6xl w-full bg-white/5 border border-white/10 rounded-3xl p-6 md:p-10 backdrop-blur-xl shadow-2xl"
+      >
+        <!-- HEADING -->
+        <h1 class="flex flex-col items-center justify-center text-center mb-6">
+          <!-- TEXT -->
+          <span
+            class="text-3xl md:text-5xl font-extrabold text-yellow-400 tracking-wide"
+          >
+            🏏 IPL 2026
+          </span>
+        </h1>
 
-        <!-- MATCH 1 -->
-        <div class="bg-gradient-to-br from-white/10 to-white/5 p-4 sm:p-5 md:p-6 rounded-3xl border border-white/10 backdrop-blur-xl shadow-xl hover:scale-[1.03] md:hover:scale-105 transition">
-
-          <div class="flex justify-between items-center mb-4">
-            <span class="text-xs bg-blue-500/20 px-3 py-1 rounded-full text-blue-400">Match 1</span>
-            <span class="text-xs text-gray-400">IPL T20</span>
-          </div>
-
-          <!-- TEAMS -->
-          <div class="flex items-center justify-between mb-6">
-
-            <div class="flex flex-col items-center gap-1 sm:gap-2">
-              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Royal_Challengers_Bengaluru_Logo.svg/250px-Royal_Challengers_Bengaluru_Logo.svg.png"
-                class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain">
-              <p class="text-xs sm:text-sm font-semibold">RCB</p>
-            </div>
-
-            <div class="text-center">
-              <p class="text-lg sm:text-xl font-bold text-yellow-400">VS</p>
-              <p class="text-[10px] sm:text-xs text-gray-400">T20</p>
-            </div>
-
-            <div class="flex flex-col items-center gap-1 sm:gap-2">
-              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/51/Sunrisers_Hyderabad_Logo.svg/250px-Sunrisers_Hyderabad_Logo.svg.png"
-                class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain">
-              <p class="text-xs sm:text-sm font-semibold">SRH</p>
-            </div>
-
-          </div>
-
-          <div class="text-center mb-4">
-            <p class="text-gray-400 text-xs sm:text-sm">📍 M.Chinnaswamy Stadium, Bengaluru</p>
-            <p class="text-yellow-400 font-semibold text-sm sm:text-base mt-1">28 March • 7:30 PM</p>
-          </div>
-
-          <div class="text-center mb-4">
-            <p id="countdown1" class="text-base sm:text-lg font-bold text-green-400">Loading...</p>
-          </div>
-
-          <div class="text-center text-xs text-gray-400 border-t border-white/10 pt-3">
-            🎥 Live streaming will begin once the match starts
-          </div>
-
+        <!-- LIVE -->
+        <div class="flex justify-center mb-4">
+          <span
+            class="bg-red-600 px-5 py-1 rounded-full text-sm font-bold animate-pulse"
+          >
+            LIVE
+          </span>
         </div>
 
-        <!-- MATCH 2 -->
-        <div class="bg-gradient-to-br from-white/10 to-white/5 p-4 sm:p-5 md:p-6 rounded-3xl border border-white/10 backdrop-blur-xl shadow-xl hover:scale-[1.03] md:hover:scale-105 transition">
+        <h2
+          class="text-3xl md:text-5xl font-extrabold text-center mb-10 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+        >
+          LIVE CRICKET EXPERIENCE
+        </h2>
 
-          <div class="flex justify-between items-center mb-4">
-            <span class="text-xs bg-purple-500/20 px-3 py-1 rounded-full text-purple-400">Match 2</span>
-            <span class="text-xs text-gray-400">IPL T20</span>
-          </div>
+        <!-- MATCH CARDS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- MATCH 1 -->
+          <div class="relative group">
+            <div
+              class="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500 to-purple-600 opacity-20 blur-xl group-hover:opacity-40 transition"
+            ></div>
 
-          <div class="flex items-center justify-between mb-6">
+            <div
+              class="relative bg-black/80 backdrop-blur-xl rounded-3xl p-6 border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.9)] group-hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02]"
+            >
+              <div class="flex justify-between mb-4">
+                <span
+                  class="text-xs bg-blue-500/20 px-3 py-1 rounded-full text-blue-400"
+                >
+                  Match 1
+                </span>
+                <span class="text-xs text-gray-500">IPL T20</span>
+              </div>
 
-            <div class="flex flex-col items-center gap-1 sm:gap-2">
-              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Mumbai_Indians_Logo.svg/250px-Mumbai_Indians_Logo.svg.png"
-                class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain">
-              <p class="text-xs sm:text-sm font-semibold">MI</p>
+              <div class="flex justify-between items-center mb-6">
+                <div class="flex flex-col items-center gap-2">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Royal_Challengers_Bengaluru_Logo.svg/250px-Royal_Challengers_Bengaluru_Logo.svg.png"
+                    class="w-12 h-14"
+                  />
+                  <p class="text-sm text-gray-200">RCB</p>
+                </div>
+
+                <div class="text-center">
+                  <p class="text-xl text-yellow-400 font-bold">VS</p>
+                  <p class="text-xs text-gray-500">T20</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-2">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/5/51/Sunrisers_Hyderabad_Logo.svg/250px-Sunrisers_Hyderabad_Logo.svg.png"
+                    class="w-14 h-14"
+                  />
+                  <p class="text-sm text-gray-200">SRH</p>
+                </div>
+              </div>
+
+              <div class="text-center mb-4">
+                <p class="text-gray-500 text-sm">
+                  📍 M.Chinnaswamy Stadium, Bengaluru
+                </p>
+                <p class="text-yellow-400">28 March • 7:30 PM</p>
+              </div>
+
+              <div class="text-center mb-4">
+                <p id="countdown1" class="text-green-400 font-bold">
+                  Loading...
+                </p>
+              </div>
+
+              <div
+                class="text-center text-xs text-gray-600 border-t border-white/10 pt-3"
+              >
+                🎥 Live streaming will begin once the match starts
+              </div>
             </div>
+          </div>
 
-            <div class="text-center">
-              <p class="text-lg sm:text-xl font-bold text-yellow-400">VS</p>
-              <p class="text-[10px] sm:text-xs text-gray-400">T20</p>
+          <!-- MATCH 2 -->
+          <div class="relative group">
+            <div
+              class="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500 to-blue-500 opacity-20 blur-xl group-hover:opacity-40 transition"
+            ></div>
+
+            <div
+              class="relative bg-black/80 backdrop-blur-xl rounded-3xl p-6 border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.9)] group-hover:shadow-[0_0_40px_rgba(168,85,247,0.6)] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02]"
+            >
+              <div class="flex justify-between mb-4">
+                <span
+                  class="text-xs bg-purple-500/20 px-3 py-1 rounded-full text-purple-400"
+                >
+                  Match 2
+                </span>
+                <span class="text-xs text-gray-500">IPL T20</span>
+              </div>
+
+              <div class="flex justify-between items-center mb-6">
+                <div class="flex flex-col items-center gap-2">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Mumbai_Indians_Logo.svg/250px-Mumbai_Indians_Logo.svg.png"
+                    class="w-14 h-14"
+                  />
+                  <p class="text-sm text-gray-200">MI</p>
+                </div>
+
+                <div class="text-center">
+                  <p class="text-xl text-yellow-400 font-bold">VS</p>
+                  <p class="text-xs text-gray-500">T20</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-2">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Kolkata_Knight_Riders_Logo.svg/250px-Kolkata_Knight_Riders_Logo.svg.png"
+                    class="w-12 h-14"
+                  />
+                  <p class="text-sm text-gray-200">KKR</p>
+                </div>
+              </div>
+
+              <div class="text-center mb-4">
+                <p class="text-gray-500 text-sm">📍 Wankhede Stadium, Mumbai</p>
+                <p class="text-yellow-400">29 March • 7:30 PM</p>
+              </div>
+
+              <div class="text-center mb-4">
+                <p id="countdown2" class="text-green-400 font-bold">
+                  Loading...
+                </p>
+              </div>
+
+              <div
+                class="text-center text-xs text-gray-600 border-t border-white/10 pt-3"
+              >
+                🎥 Live streaming will begin once the match starts
+              </div>
             </div>
-
-            <div class="flex flex-col items-center gap-1 sm:gap-2">
-              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Kolkata_Knight_Riders_Logo.svg/250px-Kolkata_Knight_Riders_Logo.svg.png"
-                class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain">
-              <p class="text-xs sm:text-sm font-semibold">KKR</p>
-            </div>
-
           </div>
-
-          <div class="text-center mb-4">
-            <p class="text-gray-400 text-xs sm:text-sm">📍 Wankhede Stadium, Mumbai</p>
-            <p class="text-yellow-400 font-semibold text-sm sm:text-base mt-1">29 March • 7:30 PM</p>
-          </div>
-
-          <div class="text-center mb-4">
-            <p id="countdown2" class="text-base sm:text-lg font-bold text-green-400">Loading...</p>
-          </div>
-
-          <div class="text-center text-xs text-gray-400 border-t border-white/10 pt-3">
-            🎥 Live streaming will begin once the match starts
-          </div>
-
         </div>
-
       </div>
-
     </div>
-  </div>
 
-  <!-- FOOTER -->
-  <footer class="bg-black/50 border-t border-white/20 text-center py-4 text-xs">
-    © 2026
-    <span class="font-bold text-red-500">
-      Cric<span class="text-white">Pulse</span>
-    </span>
-    • Developed by Naveen Rathore
-  </footer>
+    <!-- FOOTER -->
+    <footer
+      class="bg-black/50 border-t border-white/20 text-center py-4 text-xs"
+    >
+      © 2026
+      <span class="font-bold text-red-500"
+        >Cric<span class="text-white">Pulse</span></span
+      >
+      • Developed by Naveen Rathore
+    </footer>
 
-  <!-- COUNTDOWN -->
-  <script>
-    function startCountdown(id, date) {
-      const el = document.getElementById(id);
+    <!-- COUNTDOWN -->
+    <script>
+      function startCountdown(id, date) {
+        const el = document.getElementById(id);
 
-      setInterval(() => {
-        const now = new Date().getTime();
-        const distance = new Date(date).getTime() - now;
+        setInterval(() => {
+          const now = new Date().getTime();
+          const distance = new Date(date).getTime() - now;
 
-        if (distance < 0) {
-          el.innerHTML = `
-            <a href="/watch-live" 
-              class="inline-block mt-2 px-5 sm:px-6 py-2 rounded-full 
-              bg-gradient-to-r from-blue-500 to-purple-600 
-              text-white font-semibold text-xs sm:text-sm 
-              shadow-lg hover:scale-105 sm:hover:scale-110 
-              hover:shadow-blue-500/50 transition duration-300">
+          if (distance < 0) {
+            el.innerHTML = `
+            <a href="/watch-live"
+              class="inline-block mt-2 px-6 py-2 rounded-full
+              bg-gradient-to-r from-blue-500 to-purple-600
+              text-white font-semibold text-sm
+              hover:scale-110 transition">
               ▶ Watch Live
             </a>
           `;
-          return;
-        }
+            return;
+          }
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((distance / (1000 * 60)) % 60);
-        const seconds = Math.floor((distance / 1000) % 60);
+          const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const h = Math.floor((distance / (1000 * 60 * 60)) % 24);
+          const m = Math.floor((distance / (1000 * 60)) % 60);
+          const s = Math.floor((distance / 1000) % 60);
 
-        el.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-      }, 1000);
-    }
+          el.innerHTML = `${d}d ${h}h ${m}m ${s}s`;
+        }, 1000);
+      }
 
-    startCountdown("countdown1", "March 28, 2026 19:30:00");
-    startCountdown("countdown2", "March 29, 2026 19:30:00");
-  </script>
-
-</body>
+      startCountdown("countdown1", "March 28, 2026 19:30:00");
+      startCountdown("countdown2", "March 29, 2026 19:30:00");
+    </script>
+  </body>
 </html>
