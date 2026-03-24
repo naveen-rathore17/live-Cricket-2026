@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Live News Channels</title>
+    <link rel="icon" type="image/png" href="/images/favicon2.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      body {
+        background: radial-gradient(circle at top, #1a0000, #000000);
+      }
+    </style>
+  </head>
+
+  <body class="text-white">
+
+   
+    <!-- ✅ NAVBAR -->
+<nav class="bg-black/70 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
+    
+    <!-- Logo -->
+    <a href="/" class="text-lg md:text-3xl font-bold text-red-500">
+      Cric<span class="text-white">Pulse</span>
+    </a>
+
+    <!-- Menu (Mobile + Desktop same) -->
+    <div class="flex gap-4 md:gap-6 text-xs sm:text-sm md:text-base font-semibold overflow-x-auto whitespace-nowrap">
+      <a href="/" class="hover:text-red-400 transition">Home</a>
+      <a href="/contact" class="hover:text-red-400 transition">Contact</a>
+      <a href="/legal" class="hover:text-red-400 transition">Disclaimer</a>
+    </div>
+
+  </div>
+</nav>
+
+    <!-- ✅ HEADING -->
+    <div class="text-center mt-8 md:mt-10 px-4">
+      <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-red-400">
+        📰 Live News Channels
+      </h1>
+      <p class="text-gray-400 mt-2 text-sm md:text-base">
+        Watch all popular news channels in one place
+      </p>
+    </div>
+
+    <!-- ✅ CHANNEL GRID -->
+    <div class="max-w-7xl mx-auto px-4 mt-8 md:mt-10">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+
+        <% const channels = [
+          { name: "Aaj Tak", link: "/aaj_tak_live", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/7/77/Aaj_Tak_logo.svg/250px-Aaj_Tak_logo.svg.png" },
+          { name: "ABP News", link: "/abp_news_live", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/ABP_News_logo.svg/120px-ABP_News_logo.svg.png" },
+          { name: "NDTV India", link: "/ndtv_live", logo: "https://imgs.search.brave.com/tMaWAXSdfAfhp0uGwr9u9FZ0e-oym9m6TX2Er8ezeOk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL25kdHY5/MTgyLmxvZ293aWsu/Y29tLndlYnA" },
+          { name: "Zee News", link: "/zee_news_live", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Zee_News_2025.svg" },
+          { name: "India TV", link: "/india_tv_live", logo: "https://imgs.search.brave.com/4J2KgAMzlZYgp5Be0B8CarBoOaRkWov-JED8DbmafgI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bmljZXBuZy5jb20v/cG5nL2RldGFpbC8z/NjctMzY3MDgxOF9p/bmRpYS10di1sb2dv/LXBuZy5wbmc" },
+          { name: "News18 India", link: "/news18_live", logo: "https://imgs.search.brave.com/EjwanQdFsOvV0FjIfn3AxNm0HZvE9ojhTb09kQ70Plc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bWVkaWFpbmZvbGlu/ZS5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjAvMDQvTmV3/czE4LUluZGlhLWxv/Z28uanBn" },
+          { name: "Republic Bharat", link: "/republic_live", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Republic_Bharat_logo.svg/250px-Republic_Bharat_logo.svg.png" },
+          { name: "Times Now", link: "/times_now_live", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Times_Now_Navbharat.svg/250px-Times_Now_Navbharat.svg.png" },
+          { name: "Zee Bharat", link: "/zee_bharat_live", logo: "https://imgs.search.brave.com/KreAPHOcV5bwpQRPww2o_XyhWRvSv65we6R1Kebr7ZA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hZG1p/bi56ZWVtZWRpYS5p/bi9zdG9yYWdlL2xv/Z28vemVlLWJoYXJh/dC1oaS5zdmc" },
+          { name: "DD News", link: "/dd_news_live", logo: "https://imgs.search.brave.com/hyOCYCTWf_-p2s58Yu9HvydsFhU7BuOyi19xtZ6sNYs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuaW5kaWFuZXhw/cmVzcy5jb20vMjAy/NC8wNC9ERGxvZ28t/MmNvbC5qcGc_dz0x/NjAw" },
+          { name: "India Today", link: "/india_today_live", logo: "https://upload.wikimedia.org/wikipedia/commons/a/ab/India_Today_logo.png" },
+          { name: "News Nation", link: "/news_nation_live", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/News_nation_logo.jpg/250px-News_nation_logo.jpg" },
+          { name: "TV9 Bharatvarsh", link: "/tv9_live", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/TV9_Bharatvarsh.svg/250px-TV9_Bharatvarsh.svg.png" },
+          { name: "Zee Business", link: "/zee_business_live", logo: "https://imgs.search.brave.com/7T4hNXwR_ZP_vEG0OAQjwlKzaxEUwEtMvmaZyeuwthU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2lraWEubm9j/b29raWUubmV0L2xv/Z29wZWRpYS9pbWFn/ZXMvMC8wNy9aZWVf/QnVzaW5lc3NfKDIw/MjUpLnN2Zy9yZXZp/c2lvbi9sYXRlc3Qv/c2NhbGUtdG8td2lk/dGgtZG93bi8yNTA_/Y2I9MjAyNTA2MDkx/NDA4MTA" },
+          { name: "Zee Rajasthan", link: "/zee_rj_live", logo: "https://imgs.search.brave.com/esBlQzJ4Q_dqM8P07jmA-yTRRGcAoZRt5uaHvjs3x9w/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hZG1p/bi56ZWVtZWRpYS5p/bi9zdG9yYWdlL2xv/Z28vemVlLXJhamFz/dGhhbi5zdmc" },
+           { name: "DD Sports", link: "/dd_sports_live", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/1/16/DD_Sports_logo.svg/250px-DD_Sports_logo.svg.png" }
+        ]; %>
+
+        <% channels.forEach(channel => { %>
+          <a href="<%= channel.link %>">
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col items-center justify-center hover:scale-110 transition duration-300 backdrop-blur-lg shadow-lg cursor-pointer">
+
+              <img src="<%= channel.logo %>" class="h-10 md:h-12 object-contain mb-3" />
+
+              <p class="text-xs md:text-sm font-semibold text-center">
+                <%= channel.name %>
+              </p>
+
+              <span class="text-red-400 text-xs mt-1 animate-pulse">
+                🔴 Live
+              </span>
+
+            </div>
+          </a>
+        <% }) %>
+
+      </div>
+    </div>
+
+    <!-- ✅ FOOTER -->
+    <footer class="bg-black/60 border-t border-white/10 mt-16">
+       <footer
+      class="bg-black/50 border-t border-white/20 text-center py-5 text-sm"
+    >
+      © 2026
+      <span class="font-bold text-red-500">
+        Cric<span class="text-white">Pulse</span>
+      </span>
+      • Developed by Naveen Rathore
+    </footer>
+    </footer>
+
+
+    
+
+  </body>
+</html>
