@@ -12,30 +12,39 @@
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   </head>
 
-  <body class="bg-gradient-to-br from-gray-950 via-black to-gray-900 min-h-screen text-white flex flex-col">
-
+  <body
+    class="bg-gradient-to-br from-gray-950 via-black to-gray-900 min-h-screen text-white flex flex-col"
+  >
     <!-- ✅ NAVBAR -->
-    <nav class="flex flex-wrap justify-between items-center px-4 md:px-6 py-3 bg-black/70 backdrop-blur-md shadow-lg border-b border-red-500/30">
+    <nav
+      class="flex flex-wrap justify-between items-center px-4 md:px-6 py-3 bg-black/70 backdrop-blur-md shadow-lg border-b border-red-500/30"
+    >
       <a href="/" class="text-2xl md:text-3xl font-bold text-red-500">
         Cric<span class="text-white">Pulse</span>
       </a>
 
       <div class="mt-2 md:mt-0">
-        <a href="/" class="hover:text-red-400 px-2 py-1 text-sm font-semibold">Home</a>
-        <a href="/live_news_channel" class="hover:text-red-400 px-2 py-1 text-sm font-semibold">All Channels</a>
-        
+        <a href="/" class="hover:text-red-400 px-2 py-1 text-sm font-semibold"
+          >Home</a
+        >
+        <a
+          href="/live_news_channel"
+          class="hover:text-red-400 px-2 py-1 text-sm font-semibold"
+          >All Channels</a
+        >
       </div>
     </nav>
 
     <!-- ✅ HEADER -->
     <div class="text-center mt-10 px-4 space-y-4">
-
       <div class="flex justify-center">
         <img src="<%= logo %>" class="h-12 md:h-16 drop-shadow-lg" />
       </div>
 
       <div class="flex justify-center">
-        <span class="bg-red-600 px-4 py-1 text-xs md:text-sm font-bold rounded-full animate-pulse shadow-lg">
+        <span
+          class="bg-red-600 px-4 py-1 text-xs md:text-sm font-bold rounded-full animate-pulse shadow-lg"
+        >
           🔴 LIVE NEWS
         </span>
       </div>
@@ -45,61 +54,79 @@
       </h1>
 
       <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto">
-        Breaking News • Politics • India Updates • World Headlines • Live Coverage
+        Breaking News • Politics • India Updates • World Headlines • Live
+        Coverage
       </p>
-
     </div>
 
     <!-- ✅ BREAKING TICKER -->
-    <div class="mt-8 bg-gradient-to-r from-red-700 via-red-600 to-red-700 py-2 overflow-hidden shadow-lg">
-      <div class="whitespace-nowrap animate-[scroll_18s_linear_infinite] text-sm md:text-xl font-bold">
-        🔴 BREAKING NEWS : Live Updates | Politics | Economy | Sports | Stay Updated 24×7
+    <div
+      class="mt-8 bg-gradient-to-r from-red-700 via-red-600 to-red-700 py-2 overflow-hidden shadow-lg"
+    >
+      <div
+        class="whitespace-nowrap animate-[scroll_18s_linear_infinite] text-sm md:text-xl font-bold"
+      >
+        🔴 BREAKING NEWS : Live Updates | Politics | Economy | Sports | Stay
+        Updated 24×7
       </div>
     </div>
 
     <!-- ✅ PLAYER -->
     <div class="flex justify-center mt-8 px-3">
-      <div class="bg-gradient-to-br from-gray-900 via-black to-gray-900 p-4 md:p-6 rounded-2xl shadow-2xl border border-white/10 w-full max-w-4xl">
-
+      <div
+        class="bg-gradient-to-br from-gray-900 via-black to-gray-900 p-4 md:p-6 rounded-2xl shadow-2xl border border-white/10 w-full max-w-4xl"
+      >
         <!-- TOP BAR -->
         <div class="flex justify-between items-center mb-4">
-
           <div class="flex items-center gap-2">
-            <span class="bg-red-600 px-3 py-1 text-xs font-bold rounded-full animate-pulse">
+            <span
+              class="bg-red-600 px-3 py-1 text-xs font-bold rounded-full animate-pulse"
+            >
               LIVE
             </span>
             <span class="text-gray-300 text-xs">Streaming Now</span>
           </div>
 
           <div class="flex items-center gap-2">
-
             <!-- LIVE USERS -->
-            <div class="flex items-center gap-1 bg-red-600 px-2 py-1 rounded-full text-xs font-bold">
+            <div
+              class="flex items-center gap-1 bg-red-600 px-2 py-1 rounded-full text-xs font-bold"
+            >
               <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute h-full w-full rounded-full bg-white opacity-75"></span>
+                <span
+                  class="animate-ping absolute h-full w-full rounded-full bg-white opacity-75"
+                ></span>
                 <span class="relative rounded-full h-2 w-2 bg-white"></span>
               </span>
               <span id="liveUsers">0</span> Live
             </div>
 
-            <button onclick="openHelp()" class="bg-blue-600 px-2 py-1 rounded text-xs">
+            <button
+              onclick="openHelp()"
+              class="bg-blue-600 px-2 py-1 rounded text-xs"
+            >
               Help
             </button>
-
           </div>
-
         </div>
 
         <!-- VIDEO -->
         <div class="aspect-video w-full">
-          <video id="video" controls autoplay class="w-full h-full rounded-xl"></video>
+          <video
+            id="video"
+            controls
+            autoplay
+            class="w-full h-full rounded-xl"
+          ></video>
         </div>
-
       </div>
     </div>
 
     <!-- ✅ HELP MODAL -->
-    <div id="helpModal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-4">
+    <div
+      id="helpModal"
+      class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-4"
+    >
       <div class="bg-gray-900 p-5 rounded-xl max-w-md w-full">
         <h2 class="text-xl font-bold mb-4">Streaming Help</h2>
 
@@ -109,15 +136,24 @@
           <li>📱 Rotate for fullscreen</li>
         </ul>
 
-        <button onclick="closeHelp()" class="mt-4 w-full bg-red-600 py-2 rounded">
+        <button
+          onclick="closeHelp()"
+          class="mt-4 w-full bg-red-600 py-2 rounded"
+        >
           Close
         </button>
       </div>
     </div>
 
     <!-- ✅ FOOTER -->
-    <footer class="bg-black/50 border-t border-white/20 text-center py-4 text-xs mt-10">
-      © 2026 CricPulse • Developed by Naveen Rathore
+    <footer
+      class="bg-black/50 border-t border-white/20 text-center py-5 text-sm"
+    >
+      © 2026
+      <span class="font-bold text-red-500">
+        Cric<span class="text-white">Pulse</span>
+      </span>
+      • Developed by Naveen Rathore
     </footer>
 
     <!-- ✅ SCRIPTS -->
@@ -152,10 +188,13 @@
 
     <style>
       @keyframes scroll {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
       }
     </style>
-
   </body>
 </html>
