@@ -1,5 +1,4 @@
 require("dotenv").config();
-
 const express = require("express");
 const app = express();
 const http = require("http");
@@ -57,18 +56,18 @@ app.get("/squads", (req, res) => {
 });
 
 app.get("/watch-live-zeenews", (req, res) => {
-  res.render("zeenews",{
+  res.render("zeenews", {
     streamNews: process.env.STREAM_NEWS_URL
   })
 });
 
 app.get("/star_sport_1", (req, res) => {
-  res.render("sport-1",{
+  res.render("sport-1", {
     sport1: process.env.SPORT_1
   })
 });
 
-app.get("/live-matches",(req,res)=>{
+app.get("/live-matches", (req, res) => {
   res.render("liveNotice")
 })
 
@@ -97,10 +96,10 @@ app.post("/contact", async (req, res) => {
   }
 });
 
-app.get("/live_news_channel",(req,res)=>{
+app.get("/live_news_channel", (req, res) => {
   res.render("all-news")
 })
- // All news channnel routes
+// All news channnel routes
 app.get('/aaj_tak_live', (req, res) => {
   res.render('player', {
     title: "Aaj Tak Live",
@@ -228,28 +227,6 @@ app.get("/dd_sports_live", (req, res) => {
     stream: process.env.DD_SPORTS_STREAM
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// http://103.99.249.139/zeecinema/index.m3u8  zee cinema
-
-
 
 
 const port = process.env.PORT || 3000;
