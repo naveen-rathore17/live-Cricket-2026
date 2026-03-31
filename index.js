@@ -41,11 +41,7 @@ app.get("/help", (req, res) => {
   res.render("help");
 });
 
-app.get("/star_sport_2", (req, res) => {
-  res.render("sport-2", {
-    streamUrl: process.env.STREAM_URL
-  });
-});
+
 
 app.get("/legal", (req, res) => {
   res.render("info");
@@ -62,9 +58,7 @@ app.get("/watch-live-zeenews", (req, res) => {
 });
 
 app.get("/star_sport_1", (req, res) => {
-  res.render("sport-1", {
-    sport1: process.env.SPORT_1
-  })
+  res.render("sport-1")
 });
 
 app.get("/live-matches", (req, res) => {
