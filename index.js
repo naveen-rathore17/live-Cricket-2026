@@ -60,7 +60,9 @@ app.get("/watch-live-zeenews", (req, res) => {
 });
 
 app.get("/star_sport_1", (req, res) => {
-  res.render("sport-1")
+  res.render("sport-1",{
+    stream: process.env.url
+  })
 });
 
 app.get("/live-matches", (req, res) => {
